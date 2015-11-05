@@ -1,0 +1,11 @@
+﻿Câu hỏi phần nghiệp vụ bán hàng
+1. Những sản phẩm như thế nào mới cấp thẻ bảo hành cho khách hàng?
+2. Các chương trình trình giảm giá, khuyến mãi có được quản lý?
+3. Giá sản phẩm bán sỉ khác với bán lẻ như thế nào?
+4. Giá bán do ai quy định?
+5. Quy trình bán laptop có khác gì với quy trình bán phụ kiện?
+6. Nếu trong quá trình giao hàng cho khách hàng tốn thêm chi phí vận chuyển thì chi phí đó sẽ tính cho bên nào?
+7. Nhân viên thu ngân có được xóa thông tin một khách hàng/hóa đơn nào đó?
+8. Mua bao nhiêu mặt hàng trở trên được xem là mua sỉ?
+
+
