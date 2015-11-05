@@ -1,0 +1,6 @@
+﻿1.Ai được quyền sử dụng hệ thông?
+2.Thành viên nào được sử dụng chức năng nào, có phân chia mỗi người mỗi chức năng khác hay giống nhau?
+3.Một nhân viên sử dụng hệ thống thì cần lưu trữ và quản lý thông tin gì?
+4.Ai là người cho phép và xóa  nhân viên sử dụng hệ thống ?
+5.Để sử dụng hệ thống cần login hay không, login cần id và pass , ai sẽ cung cấp hay người dùng tự tạo?
+6.Có hay không chức năng hoặc thành viên nào có thể xem được tất cả các thống kê báo cáo của tất cả các công việc trong công ty?
