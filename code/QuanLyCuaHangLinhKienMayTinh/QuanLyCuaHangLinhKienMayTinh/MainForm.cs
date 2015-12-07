@@ -20,9 +20,10 @@ namespace QuanLyCuaHangLinhKienMayTinh
             Form s = new Home();
             s.TopLevel = false;
             s.Visible = true;
+            s.Padding = new Padding(0);
             s.Location = new Point(0, 0);
+            pnel_trangchu.Site = s.Site;
             pnel_trangchu.Controls.Add(s);
-
 
         }
  
@@ -108,11 +109,13 @@ namespace QuanLyCuaHangLinhKienMayTinh
             pa.Dock = DockStyle.Fill;
             pa.AutoScroll = true;
             pa.Controls.Add(f);
+            pa.Padding=  new Padding(0);
             pa.Name = "panel" + name;
             pa.Size = f.Size;
-            pa.Resize += new EventHandler(pa_resize);
+            
             //add form to group
             DevComponents.DotNetBar.Controls.GroupPanel g = new DevComponents.DotNetBar.Controls.GroupPanel();
+            g.Resize += new EventHandler(pa_resize);
             g.Dock = DockStyle.Fill;
             ///// set group box
             g.Text = name;
@@ -224,37 +227,37 @@ namespace QuanLyCuaHangLinhKienMayTinh
         /// <param name="e"></param>
         private void pa_resize(object sender, EventArgs e)
         {
-            //Console.WriteLine("resizing");
-            Control n = (Control)sender;
-            foreach( Control c in n.Controls)
+            Control m = (Control)sender;
+            if (m.HasChildren )
             {
-
-                if(n.Width > c.Width)
+                Control n = m.Controls[0];
+                if (n.HasChildren)
                 {
-                    c.Width = n.Width;
-                }
-                if(n.Height > c.Height)
-                {
-                    c.Height = n.Height;
-                }
-                if (c.Width >= c.MinimumSize.Width && c.Width > n.Width)
-                {
-                    //Console.WriteLine("w:" + c.Width + ";m_w:" + c.MinimumSize.Width + ";n_w:" + n.Width);
-                    c.Width = n.Width;
-                }
-                if (c.Height >= c.MinimumSize.Height && c.Height > n.Height)
-                {
-                    //Console.WriteLine("h:" + c.Height + ";m_h:" + c.MinimumSize.Height + ";n_h:" + n.Height);
-                    c.Height = n.Height;
-                }
+                    Control c = n.Controls[0];
+                    n.Location = new Point(0, 0);
+                    n.Size = new Size(m.Width - 6, m.Height - 21);
+                    c.Size = new Size(n.Width, n.Height);
 
 
 
+                    Console.WriteLine("---------");
+                    Console.WriteLine("w-3" + m.Width + "h-3" + m.Height);
+                    Console.WriteLine("w-2" + n.Width + "h-2" + n.Height);
+                    Console.WriteLine("location" + c.Location.X + ":" + c.Location.Y);
+                    Console.WriteLine("w-1" + c.Width + "h-1" + c.Height);
+                    Console.WriteLine("---------");
+                }
             }
+
+           
+
 
 
 
         }
         #endregion
+
+
+
     }
 }

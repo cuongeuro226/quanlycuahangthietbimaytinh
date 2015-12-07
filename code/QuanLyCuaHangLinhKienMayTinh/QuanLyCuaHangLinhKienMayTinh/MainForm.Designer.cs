@@ -42,17 +42,23 @@
             this.btn_trangchu = new DevComponents.DotNetBar.ButtonX();
             this.stab_item_home = new DevComponents.DotNetBar.SuperTabItem();
             this.stabpnel_item_thietlap = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.ribbonBar1 = new DevComponents.DotNetBar.RibbonBar();
+            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
+            this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
+            this.buttonX4 = new DevComponents.DotNetBar.ButtonX();
+            this.buttonX5 = new DevComponents.DotNetBar.ButtonX();
+            this.buttonX6 = new DevComponents.DotNetBar.ButtonX();
             this.stab_item_thietlap = new DevComponents.DotNetBar.SuperTabItem();
-            this.stabpnel_item_tcanhan = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.stab_item_ttcanhan = new DevComponents.DotNetBar.SuperTabItem();
             this.stabpnel_item_banhang = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.stab_item_banhang = new DevComponents.DotNetBar.SuperTabItem();
-            this.stabpnel_item_thongke = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.stab_item_thongke = new DevComponents.DotNetBar.SuperTabItem();
-            this.stabpnel_item_baohanh = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.stab_item_baohanh = new DevComponents.DotNetBar.SuperTabItem();
             this.stabpnel_item_kho = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.stab_item_kho = new DevComponents.DotNetBar.SuperTabItem();
+            this.stabpnel_item_baohanh = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.stab_item_baohanh = new DevComponents.DotNetBar.SuperTabItem();
+            this.stabpnel_item_thongke = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.stab_item_thongke = new DevComponents.DotNetBar.SuperTabItem();
+            this.stabpnel_item_tcanhan = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.stab_item_ttcanhan = new DevComponents.DotNetBar.SuperTabItem();
             this.pnel_image = new System.Windows.Forms.Panel();
             this.pnel_thongtin = new System.Windows.Forms.Panel();
             this.txb_thongtinnhanvien = new System.Windows.Forms.TextBox();
@@ -62,20 +68,22 @@
             this.btn_morong = new DevComponents.DotNetBar.ButtonX();
             this.tapcol_content = new DevComponents.DotNetBar.TabControl();
             this.tab_panel_trangchu = new DevComponents.DotNetBar.TabControlPanel();
+            this.grop_trangchu = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.pnel_trangchu = new System.Windows.Forms.Panel();
             this.tab_item_trangchu = new DevComponents.DotNetBar.TabItem(this.components);
             this.pnel_bot = new System.Windows.Forms.Panel();
             this.sst_thongtin = new System.Windows.Forms.StatusStrip();
             this.tstrip_tencongty = new System.Windows.Forms.ToolStripStatusLabel();
             this.tstrip_thongtinnhanvien = new System.Windows.Forms.ToolStripStatusLabel();
             this.tstrip_dongho = new System.Windows.Forms.ToolStripStatusLabel();
-            this.grop_trangchu = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.pnel_trangchu = new System.Windows.Forms.Panel();
             this.pnel_top.SuspendLayout();
             this.pnel_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stab_menu)).BeginInit();
             this.stab_menu.SuspendLayout();
             this.stabpnel_item_home.SuspendLayout();
             this.rib_home.SuspendLayout();
+            this.stabpnel_item_thietlap.SuspendLayout();
+            this.ribbonBar1.SuspendLayout();
             this.pnel_image.SuspendLayout();
             this.pnel_thongtin.SuspendLayout();
             this.pnel_pic.SuspendLayout();
@@ -84,9 +92,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.tapcol_content)).BeginInit();
             this.tapcol_content.SuspendLayout();
             this.tab_panel_trangchu.SuspendLayout();
+            this.grop_trangchu.SuspendLayout();
             this.pnel_bot.SuspendLayout();
             this.sst_thongtin.SuspendLayout();
-            this.grop_trangchu.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnel_top
@@ -130,11 +138,11 @@
             this.stab_menu.ControlBox.Visible = false;
             this.stab_menu.Controls.Add(this.stabpnel_item_home);
             this.stab_menu.Controls.Add(this.stabpnel_item_thietlap);
-            this.stab_menu.Controls.Add(this.stabpnel_item_tcanhan);
             this.stab_menu.Controls.Add(this.stabpnel_item_banhang);
-            this.stab_menu.Controls.Add(this.stabpnel_item_thongke);
-            this.stab_menu.Controls.Add(this.stabpnel_item_baohanh);
             this.stab_menu.Controls.Add(this.stabpnel_item_kho);
+            this.stab_menu.Controls.Add(this.stabpnel_item_baohanh);
+            this.stab_menu.Controls.Add(this.stabpnel_item_thongke);
+            this.stab_menu.Controls.Add(this.stabpnel_item_tcanhan);
             this.stab_menu.Cursor = System.Windows.Forms.Cursors.Default;
             this.stab_menu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.stab_menu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -287,12 +295,117 @@
             // 
             // stabpnel_item_thietlap
             // 
+            this.stabpnel_item_thietlap.Controls.Add(this.ribbonBar1);
             this.stabpnel_item_thietlap.Dock = System.Windows.Forms.DockStyle.Fill;
             this.stabpnel_item_thietlap.Location = new System.Drawing.Point(0, 0);
             this.stabpnel_item_thietlap.Name = "stabpnel_item_thietlap";
+            this.stabpnel_item_thietlap.Padding = new System.Windows.Forms.Padding(12, 5, 12, 5);
             this.stabpnel_item_thietlap.Size = new System.Drawing.Size(782, 148);
             this.stabpnel_item_thietlap.TabIndex = 0;
             this.stabpnel_item_thietlap.TabItem = this.stab_item_thietlap;
+            // 
+            // ribbonBar1
+            // 
+            this.ribbonBar1.AutoOverflowEnabled = true;
+            // 
+            // 
+            // 
+            this.ribbonBar1.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonBar1.ContainerControlProcessDialogKey = true;
+            this.ribbonBar1.Controls.Add(this.buttonX2);
+            this.ribbonBar1.Controls.Add(this.buttonX3);
+            this.ribbonBar1.Controls.Add(this.buttonX4);
+            this.ribbonBar1.Controls.Add(this.buttonX5);
+            this.ribbonBar1.Controls.Add(this.buttonX6);
+            this.ribbonBar1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ribbonBar1.Location = new System.Drawing.Point(12, 5);
+            this.ribbonBar1.Name = "ribbonBar1";
+            this.ribbonBar1.Size = new System.Drawing.Size(758, 138);
+            this.ribbonBar1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonBar1.TabIndex = 1;
+            // 
+            // 
+            // 
+            this.ribbonBar1.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar1.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // buttonX2
+            // 
+            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.buttonX2.Image = global::QuanLyCuaHangLinhKienMayTinh.Properties.Resources.Contacts_icon;
+            this.buttonX2.Location = new System.Drawing.Point(630, 21);
+            this.buttonX2.Name = "buttonX2";
+            this.buttonX2.Size = new System.Drawing.Size(102, 51);
+            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
+            this.buttonX2.TabIndex = 4;
+            this.buttonX2.Text = "Liên hệ";
+            // 
+            // buttonX3
+            // 
+            this.buttonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonX3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.buttonX3.Image = global::QuanLyCuaHangLinhKienMayTinh.Properties.Resources.File_New_icon;
+            this.buttonX3.Location = new System.Drawing.Point(440, 21);
+            this.buttonX3.Name = "buttonX3";
+            this.buttonX3.Size = new System.Drawing.Size(165, 51);
+            this.buttonX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
+            this.buttonX3.TabIndex = 3;
+            this.buttonX3.Text = "Hướng dẫn sử dụng phần mềm";
+            // 
+            // buttonX4
+            // 
+            this.buttonX4.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonX4.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX4.Cursor = System.Windows.Forms.Cursors.Default;
+            this.buttonX4.Image = global::QuanLyCuaHangLinhKienMayTinh.Properties.Resources.keynote_on_icon;
+            this.buttonX4.Location = new System.Drawing.Point(305, 21);
+            this.buttonX4.Name = "buttonX4";
+            this.buttonX4.Size = new System.Drawing.Size(107, 51);
+            this.buttonX4.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
+            this.buttonX4.TabIndex = 2;
+            this.buttonX4.Text = "Sơ đồ nhân viên";
+            // 
+            // buttonX5
+            // 
+            this.buttonX5.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonX5.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX5.Cursor = System.Windows.Forms.Cursors.Default;
+            this.buttonX5.Image = global::QuanLyCuaHangLinhKienMayTinh.Properties.Resources.megaphone_icon;
+            this.buttonX5.Location = new System.Drawing.Point(155, 20);
+            this.buttonX5.Name = "buttonX5";
+            this.buttonX5.Size = new System.Drawing.Size(115, 51);
+            this.buttonX5.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
+            this.buttonX5.TabIndex = 1;
+            this.buttonX5.Text = "Giới thiệu công ty";
+            // 
+            // buttonX6
+            // 
+            this.buttonX6.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonX6.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX6.Cursor = System.Windows.Forms.Cursors.Default;
+            this.buttonX6.Image = global::QuanLyCuaHangLinhKienMayTinh.Properties.Resources.home_icon;
+            this.buttonX6.Location = new System.Drawing.Point(24, 20);
+            this.buttonX6.Name = "buttonX6";
+            this.buttonX6.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.buttonX6.Size = new System.Drawing.Size(104, 51);
+            this.buttonX6.Style = DevComponents.DotNetBar.eDotNetBarStyle.Metro;
+            this.buttonX6.TabIndex = 0;
+            this.buttonX6.Text = "Trang chủ";
             // 
             // stab_item_thietlap
             // 
@@ -302,28 +415,12 @@
             this.stab_item_thietlap.Name = "stab_item_thietlap";
             this.stab_item_thietlap.Text = "Thiết lập hệ thống";
             // 
-            // stabpnel_item_tcanhan
-            // 
-            this.stabpnel_item_tcanhan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.stabpnel_item_tcanhan.Location = new System.Drawing.Point(0, 0);
-            this.stabpnel_item_tcanhan.Name = "stabpnel_item_tcanhan";
-            this.stabpnel_item_tcanhan.Size = new System.Drawing.Size(782, 148);
-            this.stabpnel_item_tcanhan.TabIndex = 0;
-            this.stabpnel_item_tcanhan.TabItem = this.stab_item_ttcanhan;
-            // 
-            // stab_item_ttcanhan
-            // 
-            this.stab_item_ttcanhan.AttachedControl = this.stabpnel_item_tcanhan;
-            this.stab_item_ttcanhan.GlobalItem = false;
-            this.stab_item_ttcanhan.Icon = ((System.Drawing.Icon)(resources.GetObject("stab_item_ttcanhan.Icon")));
-            this.stab_item_ttcanhan.Name = "stab_item_ttcanhan";
-            this.stab_item_ttcanhan.Text = "Thông tin cá nhân";
-            // 
             // stabpnel_item_banhang
             // 
             this.stabpnel_item_banhang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.stabpnel_item_banhang.Location = new System.Drawing.Point(0, 0);
             this.stabpnel_item_banhang.Name = "stabpnel_item_banhang";
+            this.stabpnel_item_banhang.Padding = new System.Windows.Forms.Padding(12, 5, 12, 5);
             this.stabpnel_item_banhang.Size = new System.Drawing.Size(782, 148);
             this.stabpnel_item_banhang.TabIndex = 0;
             this.stabpnel_item_banhang.TabItem = this.stab_item_banhang;
@@ -336,28 +433,30 @@
             this.stab_item_banhang.Name = "stab_item_banhang";
             this.stab_item_banhang.Text = "Bán hàng";
             // 
-            // stabpnel_item_thongke
+            // stabpnel_item_kho
             // 
-            this.stabpnel_item_thongke.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.stabpnel_item_thongke.Location = new System.Drawing.Point(0, 0);
-            this.stabpnel_item_thongke.Name = "stabpnel_item_thongke";
-            this.stabpnel_item_thongke.Size = new System.Drawing.Size(782, 148);
-            this.stabpnel_item_thongke.TabIndex = 0;
-            this.stabpnel_item_thongke.TabItem = this.stab_item_thongke;
+            this.stabpnel_item_kho.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.stabpnel_item_kho.Location = new System.Drawing.Point(0, 0);
+            this.stabpnel_item_kho.Name = "stabpnel_item_kho";
+            this.stabpnel_item_kho.Padding = new System.Windows.Forms.Padding(12, 5, 12, 5);
+            this.stabpnel_item_kho.Size = new System.Drawing.Size(782, 148);
+            this.stabpnel_item_kho.TabIndex = 0;
+            this.stabpnel_item_kho.TabItem = this.stab_item_kho;
             // 
-            // stab_item_thongke
+            // stab_item_kho
             // 
-            this.stab_item_thongke.AttachedControl = this.stabpnel_item_thongke;
-            this.stab_item_thongke.GlobalItem = false;
-            this.stab_item_thongke.Icon = ((System.Drawing.Icon)(resources.GetObject("stab_item_thongke.Icon")));
-            this.stab_item_thongke.Name = "stab_item_thongke";
-            this.stab_item_thongke.Text = "Thống kê";
+            this.stab_item_kho.AttachedControl = this.stabpnel_item_kho;
+            this.stab_item_kho.GlobalItem = false;
+            this.stab_item_kho.Icon = ((System.Drawing.Icon)(resources.GetObject("stab_item_kho.Icon")));
+            this.stab_item_kho.Name = "stab_item_kho";
+            this.stab_item_kho.Text = "Kho";
             // 
             // stabpnel_item_baohanh
             // 
             this.stabpnel_item_baohanh.Dock = System.Windows.Forms.DockStyle.Fill;
             this.stabpnel_item_baohanh.Location = new System.Drawing.Point(0, 0);
             this.stabpnel_item_baohanh.Name = "stabpnel_item_baohanh";
+            this.stabpnel_item_baohanh.Padding = new System.Windows.Forms.Padding(12, 5, 12, 5);
             this.stabpnel_item_baohanh.Size = new System.Drawing.Size(782, 148);
             this.stabpnel_item_baohanh.TabIndex = 0;
             this.stabpnel_item_baohanh.TabItem = this.stab_item_baohanh;
@@ -370,22 +469,41 @@
             this.stab_item_baohanh.Name = "stab_item_baohanh";
             this.stab_item_baohanh.Text = "Bảo hành";
             // 
-            // stabpnel_item_kho
+            // stabpnel_item_thongke
             // 
-            this.stabpnel_item_kho.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.stabpnel_item_kho.Location = new System.Drawing.Point(0, 0);
-            this.stabpnel_item_kho.Name = "stabpnel_item_kho";
-            this.stabpnel_item_kho.Size = new System.Drawing.Size(782, 148);
-            this.stabpnel_item_kho.TabIndex = 0;
-            this.stabpnel_item_kho.TabItem = this.stab_item_kho;
+            this.stabpnel_item_thongke.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.stabpnel_item_thongke.Location = new System.Drawing.Point(0, 0);
+            this.stabpnel_item_thongke.Name = "stabpnel_item_thongke";
+            this.stabpnel_item_thongke.Padding = new System.Windows.Forms.Padding(12, 5, 12, 5);
+            this.stabpnel_item_thongke.Size = new System.Drawing.Size(782, 148);
+            this.stabpnel_item_thongke.TabIndex = 0;
+            this.stabpnel_item_thongke.TabItem = this.stab_item_thongke;
             // 
-            // stab_item_kho
+            // stab_item_thongke
             // 
-            this.stab_item_kho.AttachedControl = this.stabpnel_item_kho;
-            this.stab_item_kho.GlobalItem = false;
-            this.stab_item_kho.Icon = ((System.Drawing.Icon)(resources.GetObject("stab_item_kho.Icon")));
-            this.stab_item_kho.Name = "stab_item_kho";
-            this.stab_item_kho.Text = "Kho";
+            this.stab_item_thongke.AttachedControl = this.stabpnel_item_thongke;
+            this.stab_item_thongke.GlobalItem = false;
+            this.stab_item_thongke.Icon = ((System.Drawing.Icon)(resources.GetObject("stab_item_thongke.Icon")));
+            this.stab_item_thongke.Name = "stab_item_thongke";
+            this.stab_item_thongke.Text = "Thống kê";
+            // 
+            // stabpnel_item_tcanhan
+            // 
+            this.stabpnel_item_tcanhan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.stabpnel_item_tcanhan.Location = new System.Drawing.Point(0, 0);
+            this.stabpnel_item_tcanhan.Name = "stabpnel_item_tcanhan";
+            this.stabpnel_item_tcanhan.Padding = new System.Windows.Forms.Padding(12, 5, 12, 5);
+            this.stabpnel_item_tcanhan.Size = new System.Drawing.Size(782, 148);
+            this.stabpnel_item_tcanhan.TabIndex = 0;
+            this.stabpnel_item_tcanhan.TabItem = this.stab_item_ttcanhan;
+            // 
+            // stab_item_ttcanhan
+            // 
+            this.stab_item_ttcanhan.AttachedControl = this.stabpnel_item_tcanhan;
+            this.stab_item_ttcanhan.GlobalItem = false;
+            this.stab_item_ttcanhan.Icon = ((System.Drawing.Icon)(resources.GetObject("stab_item_ttcanhan.Icon")));
+            this.stab_item_ttcanhan.Name = "stab_item_ttcanhan";
+            this.stab_item_ttcanhan.Text = "Thông tin cá nhân";
             // 
             // pnel_image
             // 
@@ -512,6 +630,62 @@
             this.tab_panel_trangchu.TabIndex = 5;
             this.tab_panel_trangchu.TabItem = this.tab_item_trangchu;
             // 
+            // grop_trangchu
+            // 
+            this.grop_trangchu.CanvasColor = System.Drawing.SystemColors.Control;
+            this.grop_trangchu.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.grop_trangchu.Controls.Add(this.pnel_trangchu);
+            this.grop_trangchu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grop_trangchu.DrawTitleBox = false;
+            this.grop_trangchu.Location = new System.Drawing.Point(1, 1);
+            this.grop_trangchu.Margin = new System.Windows.Forms.Padding(0);
+            this.grop_trangchu.Name = "grop_trangchu";
+            this.grop_trangchu.Padding = new System.Windows.Forms.Padding(1);
+            this.grop_trangchu.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.grop_trangchu.Size = new System.Drawing.Size(982, 348);
+            // 
+            // 
+            // 
+            this.grop_trangchu.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.grop_trangchu.Style.BackColorGradientAngle = 90;
+            this.grop_trangchu.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.grop_trangchu.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.grop_trangchu.Style.BorderBottomWidth = 1;
+            this.grop_trangchu.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.grop_trangchu.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.grop_trangchu.Style.BorderLeftWidth = 1;
+            this.grop_trangchu.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.grop_trangchu.Style.BorderRightWidth = 1;
+            this.grop_trangchu.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.grop_trangchu.Style.BorderTopWidth = 1;
+            this.grop_trangchu.Style.CornerDiameter = 4;
+            this.grop_trangchu.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.grop_trangchu.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.grop_trangchu.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.grop_trangchu.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            // 
+            // 
+            // 
+            this.grop_trangchu.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.grop_trangchu.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.grop_trangchu.TabIndex = 0;
+            this.grop_trangchu.Text = "Trang chủ";
+            this.grop_trangchu.Resize += new System.EventHandler(this.pa_resize);
+            // 
+            // pnel_trangchu
+            // 
+            this.pnel_trangchu.AutoScroll = true;
+            this.pnel_trangchu.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.pnel_trangchu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.pnel_trangchu.Location = new System.Drawing.Point(0, 0);
+            this.pnel_trangchu.Margin = new System.Windows.Forms.Padding(0);
+            this.pnel_trangchu.Name = "pnel_trangchu";
+            this.pnel_trangchu.Size = new System.Drawing.Size(976, 327);
+            this.pnel_trangchu.TabIndex = 0;
+            // 
             // tab_item_trangchu
             // 
             this.tab_item_trangchu.AttachedControl = this.tab_panel_trangchu;
@@ -571,58 +745,6 @@
             this.tstrip_dongho.Size = new System.Drawing.Size(129, 25);
             this.tstrip_dongho.Text = "     Đồng hồ: 14:00:15";
             // 
-            // grop_trangchu
-            // 
-            this.grop_trangchu.CanvasColor = System.Drawing.SystemColors.Control;
-            this.grop_trangchu.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.grop_trangchu.Controls.Add(this.pnel_trangchu);
-            this.grop_trangchu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grop_trangchu.DrawTitleBox = false;
-            this.grop_trangchu.Location = new System.Drawing.Point(1, 1);
-            this.grop_trangchu.Name = "grop_trangchu";
-            this.grop_trangchu.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.grop_trangchu.Size = new System.Drawing.Size(982, 348);
-            // 
-            // 
-            // 
-            this.grop_trangchu.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.grop_trangchu.Style.BackColorGradientAngle = 90;
-            this.grop_trangchu.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.grop_trangchu.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.grop_trangchu.Style.BorderBottomWidth = 1;
-            this.grop_trangchu.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.grop_trangchu.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.grop_trangchu.Style.BorderLeftWidth = 1;
-            this.grop_trangchu.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.grop_trangchu.Style.BorderRightWidth = 1;
-            this.grop_trangchu.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.grop_trangchu.Style.BorderTopWidth = 1;
-            this.grop_trangchu.Style.CornerDiameter = 4;
-            this.grop_trangchu.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.grop_trangchu.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.grop_trangchu.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.grop_trangchu.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
-            // 
-            // 
-            // 
-            this.grop_trangchu.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.grop_trangchu.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.grop_trangchu.TabIndex = 0;
-            this.grop_trangchu.Text = "Trang chủ";
-            // 
-            // pnel_trangchu
-            // 
-            this.pnel_trangchu.AutoScroll = true;
-            this.pnel_trangchu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnel_trangchu.Location = new System.Drawing.Point(0, 0);
-            this.pnel_trangchu.Name = "pnel_trangchu";
-            this.pnel_trangchu.Size = new System.Drawing.Size(976, 327);
-            this.pnel_trangchu.TabIndex = 0;
-            this.pnel_trangchu.Resize += new System.EventHandler(this.pa_resize);
-            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -645,6 +767,8 @@
             this.stab_menu.ResumeLayout(false);
             this.stabpnel_item_home.ResumeLayout(false);
             this.rib_home.ResumeLayout(false);
+            this.stabpnel_item_thietlap.ResumeLayout(false);
+            this.ribbonBar1.ResumeLayout(false);
             this.pnel_image.ResumeLayout(false);
             this.pnel_thongtin.ResumeLayout(false);
             this.pnel_thongtin.PerformLayout();
@@ -654,11 +778,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.tapcol_content)).EndInit();
             this.tapcol_content.ResumeLayout(false);
             this.tab_panel_trangchu.ResumeLayout(false);
+            this.grop_trangchu.ResumeLayout(false);
             this.pnel_bot.ResumeLayout(false);
             this.pnel_bot.PerformLayout();
             this.sst_thongtin.ResumeLayout(false);
             this.sst_thongtin.PerformLayout();
-            this.grop_trangchu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -708,5 +832,11 @@
         private DevComponents.DotNetBar.TabControlPanel tab_panel_trangchu;
         private DevComponents.DotNetBar.Controls.GroupPanel grop_trangchu;
         private System.Windows.Forms.Panel pnel_trangchu;
+        private DevComponents.DotNetBar.RibbonBar ribbonBar1;
+        private DevComponents.DotNetBar.ButtonX buttonX2;
+        private DevComponents.DotNetBar.ButtonX buttonX3;
+        private DevComponents.DotNetBar.ButtonX buttonX4;
+        private DevComponents.DotNetBar.ButtonX buttonX5;
+        private DevComponents.DotNetBar.ButtonX buttonX6;
     }
 }
