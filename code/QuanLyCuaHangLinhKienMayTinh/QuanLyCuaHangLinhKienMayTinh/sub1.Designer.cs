@@ -234,6 +234,7 @@
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.MinimumSize = new System.Drawing.Size(949, 492);
             this.Name = "sub1";
             this.ResumeLayout(false);
 

@@ -62,14 +62,14 @@
             this.btn_morong = new DevComponents.DotNetBar.ButtonX();
             this.tapcol_content = new DevComponents.DotNetBar.TabControl();
             this.tab_panel_trangchu = new DevComponents.DotNetBar.TabControlPanel();
-            this.grop_trangchu = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.tab_item_trangchu = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabpnel_home = new DevComponents.DotNetBar.TabControlPanel();
             this.pnel_bot = new System.Windows.Forms.Panel();
             this.sst_thongtin = new System.Windows.Forms.StatusStrip();
             this.tstrip_tencongty = new System.Windows.Forms.ToolStripStatusLabel();
             this.tstrip_thongtinnhanvien = new System.Windows.Forms.ToolStripStatusLabel();
             this.tstrip_dongho = new System.Windows.Forms.ToolStripStatusLabel();
+            this.grop_trangchu = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.pnel_trangchu = new System.Windows.Forms.Panel();
             this.pnel_top.SuspendLayout();
             this.pnel_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stab_menu)).BeginInit();
@@ -86,6 +86,7 @@
             this.tab_panel_trangchu.SuspendLayout();
             this.pnel_bot.SuspendLayout();
             this.sst_thongtin.SuspendLayout();
+            this.grop_trangchu.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnel_top
@@ -481,7 +482,6 @@
             this.tapcol_content.CloseButtonPosition = DevComponents.DotNetBar.eTabCloseButtonPosition.Right;
             this.tapcol_content.CloseButtonVisible = true;
             this.tapcol_content.Controls.Add(this.tab_panel_trangchu);
-            this.tapcol_content.Controls.Add(this.tabpnel_home);
             this.tapcol_content.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tapcol_content.Location = new System.Drawing.Point(0, 5);
             this.tapcol_content.Name = "tapcol_content";
@@ -512,69 +512,12 @@
             this.tab_panel_trangchu.TabIndex = 5;
             this.tab_panel_trangchu.TabItem = this.tab_item_trangchu;
             // 
-            // grop_trangchu
-            // 
-            this.grop_trangchu.CanvasColor = System.Drawing.SystemColors.Control;
-            this.grop_trangchu.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.grop_trangchu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grop_trangchu.DrawTitleBox = false;
-            this.grop_trangchu.Location = new System.Drawing.Point(1, 1);
-            this.grop_trangchu.Name = "grop_trangchu";
-            this.grop_trangchu.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.grop_trangchu.Size = new System.Drawing.Size(982, 348);
-            // 
-            // 
-            // 
-            this.grop_trangchu.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.grop_trangchu.Style.BackColorGradientAngle = 90;
-            this.grop_trangchu.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.grop_trangchu.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.grop_trangchu.Style.BorderBottomWidth = 1;
-            this.grop_trangchu.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.grop_trangchu.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.grop_trangchu.Style.BorderLeftWidth = 1;
-            this.grop_trangchu.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.grop_trangchu.Style.BorderRightWidth = 1;
-            this.grop_trangchu.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.grop_trangchu.Style.BorderTopWidth = 1;
-            this.grop_trangchu.Style.CornerDiameter = 4;
-            this.grop_trangchu.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.grop_trangchu.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.grop_trangchu.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.grop_trangchu.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
-            // 
-            // 
-            // 
-            this.grop_trangchu.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.grop_trangchu.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.grop_trangchu.TabIndex = 0;
-            this.grop_trangchu.Text = "Trang chủ";
-            // 
             // tab_item_trangchu
             // 
             this.tab_item_trangchu.AttachedControl = this.tab_panel_trangchu;
             this.tab_item_trangchu.Icon = ((System.Drawing.Icon)(resources.GetObject("tab_item_trangchu.Icon")));
             this.tab_item_trangchu.Name = "tab_item_trangchu";
             this.tab_item_trangchu.Text = "Trang chủ";
-            // 
-            // tabpnel_home
-            // 
-            this.tabpnel_home.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabpnel_home.Location = new System.Drawing.Point(0, 26);
-            this.tabpnel_home.Name = "tabpnel_home";
-            this.tabpnel_home.Padding = new System.Windows.Forms.Padding(1);
-            this.tabpnel_home.Size = new System.Drawing.Size(984, 350);
-            this.tabpnel_home.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
-            this.tabpnel_home.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
-            this.tabpnel_home.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabpnel_home.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
-            this.tabpnel_home.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabpnel_home.Style.GradientAngle = 90;
-            this.tabpnel_home.TabIndex = 1;
             // 
             // pnel_bot
             // 
@@ -628,6 +571,58 @@
             this.tstrip_dongho.Size = new System.Drawing.Size(129, 25);
             this.tstrip_dongho.Text = "     Đồng hồ: 14:00:15";
             // 
+            // grop_trangchu
+            // 
+            this.grop_trangchu.CanvasColor = System.Drawing.SystemColors.Control;
+            this.grop_trangchu.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.grop_trangchu.Controls.Add(this.pnel_trangchu);
+            this.grop_trangchu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grop_trangchu.DrawTitleBox = false;
+            this.grop_trangchu.Location = new System.Drawing.Point(1, 1);
+            this.grop_trangchu.Name = "grop_trangchu";
+            this.grop_trangchu.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.grop_trangchu.Size = new System.Drawing.Size(982, 348);
+            // 
+            // 
+            // 
+            this.grop_trangchu.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.grop_trangchu.Style.BackColorGradientAngle = 90;
+            this.grop_trangchu.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.grop_trangchu.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.grop_trangchu.Style.BorderBottomWidth = 1;
+            this.grop_trangchu.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.grop_trangchu.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.grop_trangchu.Style.BorderLeftWidth = 1;
+            this.grop_trangchu.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.grop_trangchu.Style.BorderRightWidth = 1;
+            this.grop_trangchu.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.grop_trangchu.Style.BorderTopWidth = 1;
+            this.grop_trangchu.Style.CornerDiameter = 4;
+            this.grop_trangchu.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.grop_trangchu.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.grop_trangchu.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.grop_trangchu.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            // 
+            // 
+            // 
+            this.grop_trangchu.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.grop_trangchu.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.grop_trangchu.TabIndex = 0;
+            this.grop_trangchu.Text = "Trang chủ";
+            // 
+            // pnel_trangchu
+            // 
+            this.pnel_trangchu.AutoScroll = true;
+            this.pnel_trangchu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnel_trangchu.Location = new System.Drawing.Point(0, 0);
+            this.pnel_trangchu.Name = "pnel_trangchu";
+            this.pnel_trangchu.Size = new System.Drawing.Size(976, 327);
+            this.pnel_trangchu.TabIndex = 0;
+            this.pnel_trangchu.Resize += new System.EventHandler(this.pa_resize);
+            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -663,6 +658,7 @@
             this.pnel_bot.PerformLayout();
             this.sst_thongtin.ResumeLayout(false);
             this.sst_thongtin.PerformLayout();
+            this.grop_trangchu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -707,10 +703,10 @@
         private System.Windows.Forms.ToolStripStatusLabel tstrip_dongho;
         private System.Windows.Forms.TextBox txb_thongtinnhanvien;
         private DevComponents.DotNetBar.TabControl tapcol_content;
-        private DevComponents.DotNetBar.TabControlPanel tabpnel_home;
         private DevComponents.DotNetBar.ButtonX btn_morong;
-        private DevComponents.DotNetBar.TabControlPanel tab_panel_trangchu;
         private DevComponents.DotNetBar.TabItem tab_item_trangchu;
+        private DevComponents.DotNetBar.TabControlPanel tab_panel_trangchu;
         private DevComponents.DotNetBar.Controls.GroupPanel grop_trangchu;
+        private System.Windows.Forms.Panel pnel_trangchu;
     }
 }

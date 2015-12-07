@@ -17,35 +17,111 @@ namespace QuanLyCuaHangLinhKienMayTinh
         public frm_main()
         {
             InitializeComponent();
-
-        }
-
-        private void button_chucnang_click(object sender, EventArgs e)
-        {
-            
-            //form
-            Form s = new sub1();
+            Form s = new Home();
             s.TopLevel = false;
             s.Visible = true;
             s.Location = new Point(0, 0);
+            pnel_trangchu.Controls.Add(s);
+
+
+        }
+ 
+        private void button_chucnang_click(object sender, EventArgs e)
+        {
+
+            //form
+            Form s;
+            s = new Home();
+            s.TopLevel = false;
+            s.Visible = true;
+            s.Location = new Point(0, 0);
+            add_form(s, ((DevComponents.DotNetBar.ButtonX)sender).Text);
+
+            if(((DevComponents.DotNetBar.ButtonX)sender).Text== "Giới thiệu công ty")
+            {
+                s = new sub1();
+                s.TopLevel = false;
+                s.Visible = true;
+                s.Location = new Point(0, 0);
+                add_form(s, ((DevComponents.DotNetBar.ButtonX)sender).Text);
+            }
+
+
+        }
+
+
+
+        #region add_form_to_tabpage
+        public void add_form(Form f, string name)
+        {
+            int kt = 0;
+            //foreach (DevComponents.DotNetBar.TabItem conv in tapcol_content.Tabs)
+            for(int i=0; i<tapcol_content.Tabs.Count; i++)
+            {
+
+
+                //Control con = conv.AttachedControl;
+                Control con = tapcol_content.Tabs[i].AttachedControl;
+
+                Console.WriteLine("ten0:" + con.Name);
+                foreach (Control con1 in con.Controls)
+                {
+                    Console.WriteLine("ten1:" + con1.Name);
+                    foreach (Control con2 in con1.Controls)
+                    {
+                        Console.WriteLine("ten2:" + con2.Name);
+                        foreach (Control con3 in con2.Controls)
+                        {
+                            Console.WriteLine("ten3:" + con3.Name);
+                            if (con3.Name == f.Name)
+                            {
+                                kt = 1;
+                                Console.WriteLine("da ton tai");
+                                tapcol_content.SelectedTab = tapcol_content.Tabs[i];
+                                break;
+
+                            }
+                            
+                        }
+                    }
+                }
+
+                if(i== tapcol_content.Tabs.Count-1 && kt==0)
+                {
+                    
+                        // add form
+                        add_combonent(f, name);
+                        break;
+
+                    
+                }
+
+            }
+
+
+            
+        }
+        public void add_combonent(Form f, string name)
+        {
             //add form to panel
             Panel pa = new Panel();
             pa.Dock = DockStyle.Fill;
             pa.AutoScroll = true;
-            pa.Controls.Add(s);
-            pa.Size = s.Size;
+            pa.Controls.Add(f);
+            pa.Name = "panel" + name;
+            pa.Size = f.Size;
             pa.Resize += new EventHandler(pa_resize);
             //add form to group
-            DevComponents.DotNetBar.Controls.GroupPanel g=new DevComponents.DotNetBar.Controls.GroupPanel();
+            DevComponents.DotNetBar.Controls.GroupPanel g = new DevComponents.DotNetBar.Controls.GroupPanel();
             g.Dock = DockStyle.Fill;
             ///// set group box
-            g.Text = ((DevComponents.DotNetBar.ButtonX)sender).Text;
+            g.Text = name;
+            g.Name = "group_panel" + name;
             g.CanvasColor = System.Drawing.SystemColors.Control;
             g.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             //g.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             g.DrawTitleBox = false;
             g.Location = new System.Drawing.Point(1, 1);
-            g.Name = "gpnel_content";
             g.ShowFocusRectangle = true;
             g.Dock = DockStyle.Fill;
             g.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -74,40 +150,25 @@ namespace QuanLyCuaHangLinhKienMayTinh
             //add group to tabpage
             DevComponents.DotNetBar.TabControlPanel p = new DevComponents.DotNetBar.TabControlPanel();
             p.Dock = DockStyle.Fill;
+            p.Name = "tab_panel" + name;
             p.Controls.Add(g);
             DevComponents.DotNetBar.TabItem t = new DevComponents.DotNetBar.TabItem();
-            t.Text = ((DevComponents.DotNetBar.ButtonX)sender).Text;
-            t.AttachedControl=p;
+            t.Text = name;
+            t.AttachedControl = p;
+            t.Name = "tab_title" + name;
             t.Icon = ((System.Drawing.Icon)(tab_item_trangchu.Icon));
             // add tab_item to tab
             tapcol_content.Tabs.Add(t);
+            tapcol_content.SelectedTab = t;
             // refesh
             tapcol_content.Refresh();
             this.Refresh();
 
-
-
-            //foreach (Control c in tapcol_content.Tabs[0].AttachedControl.Controls)
-            //{
-            //    foreach (Control d in c.Controls)
-            //    {
-            //        Console.WriteLine("a" + d.Name);
-            //    }
-                
-            //}
-
-
-            //Console.WriteLine("b"+tapcol_content.Tabs[0].AttachedControl);
-
         }
-
-
-
-
-
+        #endregion add_form_to_tab
 
         #region ui
-        
+
         /// <summary>
         /// ktra du lieu truoc khi dong page
         /// </summary>
@@ -118,6 +179,7 @@ namespace QuanLyCuaHangLinhKienMayTinh
 
             Console.WriteLine(((DevComponents.DotNetBar.TabControl)sender).SelectedTab.Name);
         }
+
         /// <summary>
         /// mo rong khi click vao menu
         /// </summary>
@@ -132,6 +194,7 @@ namespace QuanLyCuaHangLinhKienMayTinh
                 btn_morong.BackgroundImage.RotateFlip(RotateFlipType.Rotate180FlipX);
             }
         }
+
         /// <summary>
         /// click mo rong
         /// </summary>
@@ -153,6 +216,7 @@ namespace QuanLyCuaHangLinhKienMayTinh
 
             btn_morong.BackgroundImage.RotateFlip(RotateFlipType.Rotate180FlipX);
         }
+
         /// <summary>
         /// resize sub_frm
         /// </summary>
@@ -160,7 +224,7 @@ namespace QuanLyCuaHangLinhKienMayTinh
         /// <param name="e"></param>
         private void pa_resize(object sender, EventArgs e)
         {
-            Console.WriteLine("resizing");
+            //Console.WriteLine("resizing");
             Control n = (Control)sender;
             foreach( Control c in n.Controls)
             {
@@ -175,12 +239,12 @@ namespace QuanLyCuaHangLinhKienMayTinh
                 }
                 if (c.Width >= c.MinimumSize.Width && c.Width > n.Width)
                 {
-                    Console.WriteLine("w:" + c.Width + ";m_w:" + c.MinimumSize.Width + ";n_w:" + n.Width);
+                    //Console.WriteLine("w:" + c.Width + ";m_w:" + c.MinimumSize.Width + ";n_w:" + n.Width);
                     c.Width = n.Width;
                 }
                 if (c.Height >= c.MinimumSize.Height && c.Height > n.Height)
                 {
-                    Console.WriteLine("h:" + c.Height + ";m_h:" + c.MinimumSize.Height + ";n_h:" + n.Height);
+                    //Console.WriteLine("h:" + c.Height + ";m_h:" + c.MinimumSize.Height + ";n_h:" + n.Height);
                     c.Height = n.Height;
                 }
 
