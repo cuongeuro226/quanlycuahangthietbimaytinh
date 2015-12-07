@@ -1,0 +1,5 @@
+﻿- Các thanh niên đừng code form main nha,
+
+- Chỉ tạo form mới và làm nghiệp vụ của mình thôi :v
+
+- Chỉ commint form trong nghiệp vụ của chính mình lên thôi 
