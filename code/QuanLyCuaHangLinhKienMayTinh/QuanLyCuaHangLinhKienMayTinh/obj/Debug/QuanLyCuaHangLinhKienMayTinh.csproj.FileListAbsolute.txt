@@ -220,8 +220,6 @@ c:\users\nhan_pro\documents\visual studio 2015\Projects\QuanLyCuaHangLinhKienMay
 C:\Users\nhan_pro\documents\visual studio 2015\Projects\QuanLyCuaHangLinhKienMayTinh\QuanLyCuaHangLinhKienMayTinh\obj\Debug\QuanLyCuaHangLinhKienMayTinh.frm_main.resources
 C:\Users\nhan_pro\documents\visual studio 2015\Projects\QuanLyCuaHangLinhKienMayTinh\QuanLyCuaHangLinhKienMayTinh\obj\Debug\QuanLyCuaHangLinhKienMayTinh.sub1.resources
 F:\HK_7\SE100.G11-Phương pháp PM HĐT\svn_doan\trunk\code\QuanLyCuaHangLinhKienMayTinh\QuanLyCuaHangLinhKienMayTinh\bin\Debug\QuanLyCuaHangLinhKienMayTinh.exe.config
-F:\HK_7\SE100.G11-Phương pháp PM HĐT\svn_doan\trunk\code\QuanLyCuaHangLinhKienMayTinh\QuanLyCuaHangLinhKienMayTinh\obj\Debug\QuanLyCuaHangLinhKienMayTinh.exe
-F:\HK_7\SE100.G11-Phương pháp PM HĐT\svn_doan\trunk\code\QuanLyCuaHangLinhKienMayTinh\QuanLyCuaHangLinhKienMayTinh\obj\Debug\QuanLyCuaHangLinhKienMayTinh.pdb
 F:\HK_7\SE100.G11-Phương pháp PM HĐT\svn_doan\trunk\code\QuanLyCuaHangLinhKienMayTinh\QuanLyCuaHangLinhKienMayTinh\bin\Debug\QuanLyCuaHangLinhKienMayTinh.exe
 F:\HK_7\SE100.G11-Phương pháp PM HĐT\svn_doan\trunk\code\QuanLyCuaHangLinhKienMayTinh\QuanLyCuaHangLinhKienMayTinh\bin\Debug\QuanLyCuaHangLinhKienMayTinh.pdb
 F:\HK_7\SE100.G11-Phương pháp PM HĐT\svn_doan\trunk\code\QuanLyCuaHangLinhKienMayTinh\QuanLyCuaHangLinhKienMayTinh\bin\Debug\DevComponents.DotNetBar2.dll
@@ -435,9 +433,17 @@ F:\HK_7\SE100.G11-Phương pháp PM HĐT\svn_doan\trunk\code\QuanLyCuaHangLinhKi
 F:\HK_7\SE100.G11-Phương pháp PM HĐT\svn_doan\trunk\code\QuanLyCuaHangLinhKienMayTinh\QuanLyCuaHangLinhKienMayTinh\bin\Debug\ja\DevExpress.XtraVerticalGrid.v13.1.resources.dll
 F:\HK_7\SE100.G11-Phương pháp PM HĐT\svn_doan\trunk\code\QuanLyCuaHangLinhKienMayTinh\QuanLyCuaHangLinhKienMayTinh\bin\Debug\ru\DevExpress.XtraVerticalGrid.v13.1.resources.dll
 F:\HK_7\SE100.G11-Phương pháp PM HĐT\svn_doan\trunk\code\QuanLyCuaHangLinhKienMayTinh\QuanLyCuaHangLinhKienMayTinh\obj\Debug\QuanLyCuaHangLinhKienMayTinh.csprojResolveAssemblyReference.cache
+F:\HK_7\SE100.G11-Phương pháp PM HĐT\svn_doan\trunk\code\QuanLyCuaHangLinhKienMayTinh\QuanLyCuaHangLinhKienMayTinh\obj\Debug\QuanLyCuaHangLinhKienMayTinh.Home.resources
 F:\HK_7\SE100.G11-Phương pháp PM HĐT\svn_doan\trunk\code\QuanLyCuaHangLinhKienMayTinh\QuanLyCuaHangLinhKienMayTinh\obj\Debug\QuanLyCuaHangLinhKienMayTinh.frm_main.resources
 F:\HK_7\SE100.G11-Phương pháp PM HĐT\svn_doan\trunk\code\QuanLyCuaHangLinhKienMayTinh\QuanLyCuaHangLinhKienMayTinh\obj\Debug\QuanLyCuaHangLinhKienMayTinh.Properties.Resources.resources
 F:\HK_7\SE100.G11-Phương pháp PM HĐT\svn_doan\trunk\code\QuanLyCuaHangLinhKienMayTinh\QuanLyCuaHangLinhKienMayTinh\obj\Debug\QuanLyCuaHangLinhKienMayTinh.sub1.resources
 F:\HK_7\SE100.G11-Phương pháp PM HĐT\svn_doan\trunk\code\QuanLyCuaHangLinhKienMayTinh\QuanLyCuaHangLinhKienMayTinh\obj\Debug\QuanLyCuaHangLinhKienMayTinh.csproj.GenerateResource.Cache
 F:\HK_7\SE100.G11-Phương pháp PM HĐT\svn_doan\trunk\code\QuanLyCuaHangLinhKienMayTinh\QuanLyCuaHangLinhKienMayTinh\obj\Debug\QuanLyCuaHangLinhKienMayTinh.exe.licenses
-F:\HK_7\SE100.G11-Phương pháp PM HĐT\svn_doan\trunk\code\QuanLyCuaHangLinhKienMayTinh\QuanLyCuaHangLinhKienMayTinh\obj\Debug\QuanLyCuaHangLinhKienMayTinh.Home.resources
+F:\HK_7\SE100.G11-Phương pháp PM HĐT\svn_doan\trunk\code\QuanLyCuaHangLinhKienMayTinh\QuanLyCuaHangLinhKienMayTinh\obj\Debug\QuanLyCuaHangLinhKienMayTinh.exe
+F:\HK_7\SE100.G11-Phương pháp PM HĐT\svn_doan\trunk\code\QuanLyCuaHangLinhKienMayTinh\QuanLyCuaHangLinhKienMayTinh\obj\Debug\QuanLyCuaHangLinhKienMayTinh.pdb
+F:\HK_7\SE100.G11-Phương pháp PM HĐT\svn_doan\trunk\code\QuanLyCuaHangLinhKienMayTinh\QuanLyCuaHangLinhKienMayTinh\obj\Debug\QuanLyCuaHangLinhKienMayTinh.gioithieucongty.resources
+F:\HK_7\SE100.G11-Phương pháp PM HĐT\svn_doan\trunk\code\QuanLyCuaHangLinhKienMayTinh\QuanLyCuaHangLinhKienMayTinh\obj\Debug\QuanLyCuaHangLinhKienMayTinh.HuongDanSuDungPhanMem.resources
+F:\HK_7\SE100.G11-Phương pháp PM HĐT\svn_doan\trunk\code\QuanLyCuaHangLinhKienMayTinh\QuanLyCuaHangLinhKienMayTinh\obj\Debug\QuanLyCuaHangLinhKienMayTinh.LienHe.resources
+F:\HK_7\SE100.G11-Phương pháp PM HĐT\svn_doan\trunk\code\QuanLyCuaHangLinhKienMayTinh\QuanLyCuaHangLinhKienMayTinh\obj\Debug\QuanLyCuaHangLinhKienMayTinh.NhanVien.resources
+F:\HK_7\SE100.G11-Phương pháp PM HĐT\svn_doan\trunk\code\QuanLyCuaHangLinhKienMayTinh\QuanLyCuaHangLinhKienMayTinh\obj\Debug\QuanLyCuaHangLinhKienMayTinh.SoDoNhanVien.resources
+F:\HK_7\SE100.G11-Phương pháp PM HĐT\svn_doan\trunk\code\QuanLyCuaHangLinhKienMayTinh\QuanLyCuaHangLinhKienMayTinh\obj\Debug\QuanLyCuaHangLinhKienMayTinh.ThongTinCaNhan.resources
