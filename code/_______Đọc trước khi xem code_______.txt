@@ -1,0 +1,38 @@
+﻿- Các thanh niên đừng code form main nha,
+
+- Chỉ tạo form mới và làm nghiệp vụ của mình thôi :v
+
+- Chỉ commint form trong nghiệp vụ của chính mình lên thôi 
+
+- Có 1 số hàm trong class rule.cs, ai dùng được thì lấy dùng 
+
+
+
+
+
+
+// hướng dẫn kết nối csdl
+_ tạo các file/form trong các foder tương ứng.
+
+_ sử dụng file dataconnetion.cs để kết nối csdl
+
+	khai báo dòng này ở file frogram.cs: 
+
+			DataAccessLayer.DataConnection.getInstance().SetupConnection("THANH_NHAN", "QUANLYCHUYENBAY");
+				-> trong đó  THANH_NHAnlà tên user của bạn, QUANLYCHUYENBAY la tên CSDL, thay doi la cho phù hợp
+
+_ ví dụ sử dụng dataconnection trong lớp DAL
+
+	// khai báo 
+	DataConnection _connect = DataConnection.getInstance();
+	
+	// sử dụng
+        public DataTable lay_danh_sach_ma_CB()
+        {
+            string connectstring = @"Select cb.MaChuyenBay
+                                    from CHUYENBAY cb where cb.NgayKhoiHanh >'"+DateTime.Now+"'";
+		
+            return _connect.Read(connectstring);
+        }
+
+_hết
