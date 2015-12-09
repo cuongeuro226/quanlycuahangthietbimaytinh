@@ -85,7 +85,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLogicLayer\DangNhapBLL.cs" />
+    <Compile Include="DataAccessLayer\DangNhapDAL.cs" />
     <Compile Include="DataAccessLayer\DataConnection.cs" />
+    <Compile Include="GUI\DangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DangNhap.Designer.cs">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\gioithieucongty.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,18 +144,15 @@
     <Compile Include="GUI\SoDoNhanVien.Designer.cs">
       <DependentUpon>SoDoNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\sub1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\sub1.Designer.cs">
-      <DependentUpon>sub1.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\ThongTinCaNhan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\ThongTinCaNhan.Designer.cs">
       <DependentUpon>ThongTinCaNhan.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GUI\DangNhap.resx">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\gioithieucongty.resx">
       <DependentUpon>gioithieucongty.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,9 +179,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\SoDoNhanVien.resx">
       <DependentUpon>SoDoNhanVien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\sub1.resx">
-      <DependentUpon>sub1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ThongTinCaNhan.resx">
       <DependentUpon>ThongTinCaNhan.cs</DependentUpon>
@@ -218,8 +220,9 @@
   <ItemGroup>
     <None Include="Resources\image\Button-Upload-icon.png" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="BusinessLogicLayer\" />
+    <None Include="Resources\image\TieuDeChung.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

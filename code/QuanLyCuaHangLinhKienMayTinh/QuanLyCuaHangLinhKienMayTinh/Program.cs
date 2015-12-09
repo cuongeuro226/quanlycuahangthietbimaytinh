@@ -14,9 +14,10 @@ namespace QuanLyCuaHangLinhKienMayTinh
         [STAThread]
         static void Main()
         {
+            DataAccessLayer.DataConnection.getInstance().SetupConnection("LTN", "QLBH_CuaHangBanMayTinh-LinhKien");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_main());
+            Application.Run(new GUI.frm_main());
             //Application.Run(new sub1());
         }
     }
