@@ -1,7 +1,0 @@
-C:\Users\Canh\Desktop\OOAD-2015\code\QuanLyCuaHangLinhKienMayTinh\DAL\bin\Debug\DAL.dll
-C:\Users\Canh\Desktop\OOAD-2015\code\QuanLyCuaHangLinhKienMayTinh\DAL\bin\Debug\DAL.pdb
-C:\Users\Canh\Desktop\OOAD-2015\code\QuanLyCuaHangLinhKienMayTinh\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
-C:\Users\Canh\Desktop\OOAD-2015\code\QuanLyCuaHangLinhKienMayTinh\DAL\obj\Debug\DAL.dll
-C:\Users\Canh\Desktop\OOAD-2015\code\QuanLyCuaHangLinhKienMayTinh\DAL\obj\Debug\DAL.pdb
-C:\Users\Canh\Desktop\OOAD-2015\code\QuanLyCuaHangLinhKienMayTinh\DAL\bin\Debug\DTO.dll
-C:\Users\Canh\Desktop\OOAD-2015\code\QuanLyCuaHangLinhKienMayTinh\DAL\bin\Debug\DTO.pdb

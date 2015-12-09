@@ -85,49 +85,46 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessLogicLayer\DangNhapBLL.cs" />
-    <Compile Include="DataAccessLayer\DangNhapDAL.cs" />
-    <Compile Include="DataAccessLayer\DataConnection.cs" />
-    <Compile Include="GUI\DangNhap.cs">
+    <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\DangNhap.Designer.cs">
+    <Compile Include="DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\gioithieucongty.cs">
+    <Compile Include="gioithieucongty.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\gioithieucongty.Designer.cs">
+    <Compile Include="gioithieucongty.Designer.cs">
       <DependentUpon>gioithieucongty.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Home.cs">
+    <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Home.Designer.cs">
+    <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\HuongDanSuDungPhanMem.cs">
+    <Compile Include="HuongDanSuDungPhanMem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\HuongDanSuDungPhanMem.Designer.cs">
+    <Compile Include="HuongDanSuDungPhanMem.Designer.cs">
       <DependentUpon>HuongDanSuDungPhanMem.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\LienHe.cs">
+    <Compile Include="LienHe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\LienHe.Designer.cs">
+    <Compile Include="LienHe.Designer.cs">
       <DependentUpon>LienHe.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\MainForm.cs">
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\MainForm.Designer.cs">
+    <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\NhanVien.cs">
+    <Compile Include="NhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\NhanVien.Designer.cs">
+    <Compile Include="NhanVien.Designer.cs">
       <DependentUpon>NhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -137,38 +134,37 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="rule.cs" />
-    <Compile Include="GUI\SoDoNhanVien.cs">
+    <Compile Include="SoDoNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\SoDoNhanVien.Designer.cs">
+    <Compile Include="SoDoNhanVien.Designer.cs">
       <DependentUpon>SoDoNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ThongTinCaNhan.cs">
+    <Compile Include="ThongTinCaNhan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\ThongTinCaNhan.Designer.cs">
+    <Compile Include="ThongTinCaNhan.Designer.cs">
       <DependentUpon>ThongTinCaNhan.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="GUI\DangNhap.resx">
+    <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\gioithieucongty.resx">
+    <EmbeddedResource Include="gioithieucongty.resx">
       <DependentUpon>gioithieucongty.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Home.resx">
+    <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\HuongDanSuDungPhanMem.resx">
+    <EmbeddedResource Include="HuongDanSuDungPhanMem.resx">
       <DependentUpon>HuongDanSuDungPhanMem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\LienHe.resx">
+    <EmbeddedResource Include="LienHe.resx">
       <DependentUpon>LienHe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\MainForm.resx">
+    <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\NhanVien.resx">
+    <EmbeddedResource Include="NhanVien.resx">
       <DependentUpon>NhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
@@ -177,10 +173,10 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\SoDoNhanVien.resx">
+    <EmbeddedResource Include="SoDoNhanVien.resx">
       <DependentUpon>SoDoNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ThongTinCaNhan.resx">
+    <EmbeddedResource Include="ThongTinCaNhan.resx">
       <DependentUpon>ThongTinCaNhan.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -220,7 +216,12 @@
   <ItemGroup>
     <None Include="Resources\image\Button-Upload-icon.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{d08adfd6-3744-45d8-9eb6-e544d2a374ae}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\image\TieuDeChung.png" />
   </ItemGroup>

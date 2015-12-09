@@ -1,4 +1,0 @@
-C:\Users\Canh\Desktop\OOAD-2015\code\QuanLyCuaHangLinhKienMayTinh\DTO\bin\Debug\DTO.dll
-C:\Users\Canh\Desktop\OOAD-2015\code\QuanLyCuaHangLinhKienMayTinh\DTO\bin\Debug\DTO.pdb
-C:\Users\Canh\Desktop\OOAD-2015\code\QuanLyCuaHangLinhKienMayTinh\DTO\obj\Debug\DTO.dll
-C:\Users\Canh\Desktop\OOAD-2015\code\QuanLyCuaHangLinhKienMayTinh\DTO\obj\Debug\DTO.pdb
