@@ -1,0 +1,9 @@
+C:\Users\Canh\Desktop\OOAD-2015\code\QuanLyCuaHangLinhKienMayTinh\BLL\bin\Debug\BLL.dll
+C:\Users\Canh\Desktop\OOAD-2015\code\QuanLyCuaHangLinhKienMayTinh\BLL\bin\Debug\BLL.pdb
+C:\Users\Canh\Desktop\OOAD-2015\code\QuanLyCuaHangLinhKienMayTinh\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\Canh\Desktop\OOAD-2015\code\QuanLyCuaHangLinhKienMayTinh\BLL\obj\Debug\BLL.dll
+C:\Users\Canh\Desktop\OOAD-2015\code\QuanLyCuaHangLinhKienMayTinh\BLL\obj\Debug\BLL.pdb
+C:\Users\Canh\Desktop\OOAD-2015\code\QuanLyCuaHangLinhKienMayTinh\BLL\bin\Debug\DAL.dll
+C:\Users\Canh\Desktop\OOAD-2015\code\QuanLyCuaHangLinhKienMayTinh\BLL\bin\Debug\DTO.dll
+C:\Users\Canh\Desktop\OOAD-2015\code\QuanLyCuaHangLinhKienMayTinh\BLL\bin\Debug\DAL.pdb
+C:\Users\Canh\Desktop\OOAD-2015\code\QuanLyCuaHangLinhKienMayTinh\BLL\bin\Debug\DTO.pdb
