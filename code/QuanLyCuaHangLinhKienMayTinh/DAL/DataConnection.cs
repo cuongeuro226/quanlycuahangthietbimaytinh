@@ -16,9 +16,9 @@ namespace DAL
         string strConnection;
         SqlConnection _con;
 
-        private DataConnection()
+        public DataConnection()
         {
-
+            SetupConnection("CUONGNSM", "QLBH_CuaHangBanMayTinhVaLinhKien");
         }
         public void SetDateFormat()
         {
@@ -28,6 +28,7 @@ namespace DAL
                 sql_cmd.ExecuteNonQuery();
                 sql_cmd.Dispose();
             }
+
             catch (Exception e)
             {
                 throw e;
