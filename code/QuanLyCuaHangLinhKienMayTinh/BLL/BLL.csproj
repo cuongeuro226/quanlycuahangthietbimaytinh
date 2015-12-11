@@ -45,13 +45,8 @@
     <Compile Include="PositionBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="rule.cs" />
-    <Compile Include="Warehouses\BalWarehouses.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CommonLayer\CommonLayer.csproj">
-      <Project>{2e618eae-109c-4153-84e4-2a0ac6a0467b}</Project>
-      <Name>CommonLayer</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{e54230b6-27a0-4f5b-897a-13cb0e74cd49}</Project>
       <Name>DAL</Name>
