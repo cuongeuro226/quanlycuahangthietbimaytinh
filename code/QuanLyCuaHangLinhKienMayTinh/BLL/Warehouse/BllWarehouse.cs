@@ -26,7 +26,32 @@ namespace BLL.Warehouse
 
         public bool AddWarehouse(DtoWarehouse data)
         {
-            return _dalWarehouse.AddWarehouse(data) != 0 ? true : false;
+            try
+            {
+                return _dalWarehouse.AddWarehouse(data) != 0 ? true : false;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
+        }
+
+        public bool EditWarehouse(DtoWarehouse data)
+        {
+            try
+            {
+                return _dalWarehouse.EditWarehouse(data) != 0 ? true : false;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
+        } 
+        public DataTable SearchWarehouse(string q)
+        {
+            return _dalWarehouse.SearchWarehouse(q);
         }
     }
 }
