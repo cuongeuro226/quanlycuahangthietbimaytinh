@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace QuanLyCuaHangLinhKienMayTinh
 {
     static class Program
@@ -14,10 +15,10 @@ namespace QuanLyCuaHangLinhKienMayTinh
         [STAThread]
         static void Main()
         {
-            //DataConnection.getInstance().SetupConnection("LTN", "QLBH_CuaHangBanMayTinh-LinhKien");
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DangNhap());
+            Application.Run(new frmEmployee());
             //Application.Run(new sub1());
         }
     }

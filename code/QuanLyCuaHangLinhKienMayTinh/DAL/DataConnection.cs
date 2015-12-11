@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
- 
+
 
 namespace DAL
 {
@@ -123,6 +124,24 @@ namespace DAL
             {
                 SqlConnection sql_con = OpenConnnection();
                 SqlCommand sql_cmd = new SqlCommand(sql_query, sql_con);
+                //cmd.Parameters.Add("@Img", SqlDbType.Image);
+                //cmd.Parameters["@Img"].Value = arrImg;
+                sql_cmd.ExecuteNonQuery();
+                sql_cmd.Dispose();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+        public void WriteImage(string sql_query,MemoryStream me)
+        {
+            try
+            {
+                SqlConnection sql_con = OpenConnnection();
+                SqlCommand sql_cmd = new SqlCommand(sql_query, sql_con);
+                sql_cmd.Parameters.Add("@Img", SqlDbType.Image);
+                sql_cmd.Parameters["@Img"].Value = me.ToArray();
                 sql_cmd.ExecuteNonQuery();
                 sql_cmd.Dispose();
             }

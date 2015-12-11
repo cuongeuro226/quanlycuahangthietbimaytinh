@@ -85,47 +85,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DangNhap.cs">
+    <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DangNhap.Designer.cs">
-      <DependentUpon>DangNhap.cs</DependentUpon>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="gioithieucongty.cs">
+    <Compile Include="frmIntroCompany.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="gioithieucongty.Designer.cs">
-      <DependentUpon>gioithieucongty.cs</DependentUpon>
+    <Compile Include="frmIntroCompany.Designer.cs">
+      <DependentUpon>frmIntroCompany.cs</DependentUpon>
     </Compile>
-    <Compile Include="Home.cs">
+    <Compile Include="frmHome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Home.Designer.cs">
-      <DependentUpon>Home.cs</DependentUpon>
+    <Compile Include="frmHome.Designer.cs">
+      <DependentUpon>frmHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="HuongDanSuDungPhanMem.cs">
+    <Compile Include="frmGuideSoft.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HuongDanSuDungPhanMem.Designer.cs">
-      <DependentUpon>HuongDanSuDungPhanMem.cs</DependentUpon>
+    <Compile Include="frmGuideSoft.Designer.cs">
+      <DependentUpon>frmGuideSoft.cs</DependentUpon>
     </Compile>
-    <Compile Include="LienHe.cs">
+    <Compile Include="frmContact.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LienHe.Designer.cs">
-      <DependentUpon>LienHe.cs</DependentUpon>
+    <Compile Include="frmContact.Designer.cs">
+      <DependentUpon>frmContact.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="frmMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="frmMainForm.Designer.cs">
+      <DependentUpon>frmMainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="NhanVien.cs">
+    <Compile Include="frmEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NhanVien.Designer.cs">
-      <DependentUpon>NhanVien.cs</DependentUpon>
+    <Compile Include="frmEmployee.Designer.cs">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPosition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPosition.Designer.cs">
+      <DependentUpon>frmPosition.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -134,38 +140,41 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="SoDoNhanVien.cs">
+    <Compile Include="frmEmployeeMap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SoDoNhanVien.Designer.cs">
-      <DependentUpon>SoDoNhanVien.cs</DependentUpon>
+    <Compile Include="frmEmployeeMap.Designer.cs">
+      <DependentUpon>frmEmployeeMap.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThongTinCaNhan.cs">
+    <Compile Include="frmInfoEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ThongTinCaNhan.Designer.cs">
-      <DependentUpon>ThongTinCaNhan.cs</DependentUpon>
+    <Compile Include="frmInfoEmployee.Designer.cs">
+      <DependentUpon>frmInfoEmployee.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="DangNhap.resx">
-      <DependentUpon>DangNhap.cs</DependentUpon>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="gioithieucongty.resx">
-      <DependentUpon>gioithieucongty.cs</DependentUpon>
+    <EmbeddedResource Include="frmIntroCompany.resx">
+      <DependentUpon>frmIntroCompany.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Home.resx">
-      <DependentUpon>Home.cs</DependentUpon>
+    <EmbeddedResource Include="frmHome.resx">
+      <DependentUpon>frmHome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HuongDanSuDungPhanMem.resx">
-      <DependentUpon>HuongDanSuDungPhanMem.cs</DependentUpon>
+    <EmbeddedResource Include="frmGuideSoft.resx">
+      <DependentUpon>frmGuideSoft.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LienHe.resx">
-      <DependentUpon>LienHe.cs</DependentUpon>
+    <EmbeddedResource Include="frmContact.resx">
+      <DependentUpon>frmContact.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="frmMainForm.resx">
+      <DependentUpon>frmMainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NhanVien.resx">
-      <DependentUpon>NhanVien.cs</DependentUpon>
+    <EmbeddedResource Include="frmEmployee.resx">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPosition.resx">
+      <DependentUpon>frmPosition.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -173,11 +182,11 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="SoDoNhanVien.resx">
-      <DependentUpon>SoDoNhanVien.cs</DependentUpon>
+    <EmbeddedResource Include="frmEmployeeMap.resx">
+      <DependentUpon>frmEmployeeMap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThongTinCaNhan.resx">
-      <DependentUpon>ThongTinCaNhan.cs</DependentUpon>
+    <EmbeddedResource Include="frmInfoEmployee.resx">
+      <DependentUpon>frmInfoEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -221,9 +230,19 @@
       <Project>{d08adfd6-3744-45d8-9eb6-e544d2a374ae}</Project>
       <Name>BLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{3b7150d3-8b40-4913-a77a-e0be6bc7fbe0}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\image\TieuDeChung.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\imageEmployee\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_loop.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

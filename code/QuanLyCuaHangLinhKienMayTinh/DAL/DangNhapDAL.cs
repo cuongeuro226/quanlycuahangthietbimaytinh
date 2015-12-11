@@ -9,8 +9,14 @@ namespace DAL
 { 
     public class DangNhapDAL
     {
-        DataConnection con =   DataConnection.getInstance();
-
+        
+        DataConnection con = DataConnection.getInstance();
+        
+        public DangNhapDAL()
+        {
+            DAL.DataConnection.getInstance().SetupConnection("LTN", "QLBH_CuaHangBanMayTinh-LinhKien");
+             
+        }
         // lay mat khau nhan vien
         public DataTable LayMatKhauNhanVien(string manv)
         {

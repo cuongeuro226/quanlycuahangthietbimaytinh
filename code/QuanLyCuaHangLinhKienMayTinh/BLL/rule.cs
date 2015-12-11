@@ -13,7 +13,7 @@ namespace BLL
         /// </summary>
         /// <param name="p"></param>
         /// <returns></returns>
-        public bool check_number(string number)
+        public bool CheckNumber(string number)
         {
 
 
@@ -40,7 +40,7 @@ namespace BLL
         /// </summary>
         /// <param name="text"></param>
         /// <returns></returns>
-        public int check_lengh(string text)
+        public int CheckLengh(string text)
         {
             return text.Length;
             
@@ -50,10 +50,24 @@ namespace BLL
         /// </summary>
         /// <param name="number"></param>
         /// <returns></returns>
-        public bool check_phone(string number)
+        public bool CheckPhone(string number)
         {
-            if (check_number(number) == true && check_lengh(number) > 9 && check_lengh(number) <12)
-                return true;
+            if (CheckNumber(number) == true && CheckLengh(number) > 9 && CheckLengh(number) <12)
+            {
+                if(int.Parse(number[0].ToString())==0)
+                     return true;
+            }
+               
+            return false;
+        }
+        public bool CheckNumberID(string numberId)
+        {
+            if (CheckNumber(numberId) == true && CheckLengh(numberId) > 8 && CheckLengh(numberId) < 13)
+            {
+                 
+                    return true;
+            }
+
             return false;
         }
 
