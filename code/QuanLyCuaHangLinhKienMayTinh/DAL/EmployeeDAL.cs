@@ -101,8 +101,7 @@ namespace DAL
             try
             {
                 string sql = @"Select * 
-                                    from NHANVIEN 
-                                where DaXoa=N'0'";
+                                    from NHANVIEN ";
 
                 data = _connect.Read(sql);
                 return data;
@@ -121,7 +120,7 @@ namespace DAL
             {
                 string sql = @"Select AnhThe
                                     from NHANVIEN 
-                                where DaXoa=N'0' and MaNV=N'"+EmployeeID+"'";
+                                    where MaNV =N'"+EmployeeID+"'";
 
                 data = _connect.Read(sql);
                 return data;

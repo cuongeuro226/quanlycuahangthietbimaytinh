@@ -36,17 +36,20 @@ namespace QuanLyCuaHangLinhKienMayTinh
             //load dgview
             try
             {
-                 
+                
                 dgvData.DataSource =  employeeBLL.GetAllEmployee();
-                Console.WriteLine("asas"+ dgvData.DataBindings.ToString());
+                //Console.WriteLine("asas"+ dgvData.DataBindings.ToString());
                 dgvData.ClearSelection();
                 ClearTextbox();
+
+                
 
             }
             catch(Exception ex)
             {
                 DisplayNotify("Lỗi đọc danh sách Nhân viên!! ", -1);
             }
+
         }
 
          
@@ -127,10 +130,13 @@ namespace QuanLyCuaHangLinhKienMayTinh
                 ima.Save(mem, ImageFormat.Jpeg);
                 try
                 {
+                    string KeyToSelect = txtEmployeeID.Text;
                     employeeBLL.SaveEmployee(txtEmployeeID.Text, txtEmployeeName.Text, cboSex.Text, txtNumberID.Text, txtPhone.Text, dtmBirthDay.Value.ToString(), txtAddress.Text,
                                 txtPlaceBrith.Text, txtAge.Text, macv, txtSalary.Text, dtmDayWorking.Value.ToString(), mem, txtPassword.Text, cboStatus.Text);
                     DisplayNotify("Lưu thành công", 1);
                     dgvData.DataSource = employeeBLL.GetAllEmployee();
+                    SelectRow(dgvData, KeyToSelect);
+
                 }
                 catch
                 {
@@ -174,10 +180,12 @@ namespace QuanLyCuaHangLinhKienMayTinh
                 }
                 try
                 {
+                    string KeyToSelect = txtEmployeeID.Text;
                     employeeBLL.UpdateEmployee(txtEmployeeID.Text, txtEmployeeName.Text, cboSex.Text, txtNumberID.Text, txtPhone.Text, dtmBirthDay.Value.ToString(), txtAddress.Text,
                                 txtPlaceBrith.Text, txtAge.Text, macv, txtSalary.Text, dtmDayWorking.Value.ToString(), mem, txtPassword.Text, cboStatus.Text);
                     DisplayNotify("Cập nhật thành công", 1);
                     dgvData.DataSource = employeeBLL.GetAllEmployee();
+                    SelectRow(dgvData, KeyToSelect);
 
                 }
                 catch
@@ -518,6 +526,24 @@ namespace QuanLyCuaHangLinhKienMayTinh
             picImage.BackgroundImage = null;
         }
 
+        public void SelectRow(DataGridView dgv, string key)
+        {
+            for(int i=0; i<dgv.RowCount; i++)
+            {
+                for(int j=0; j<dgv.Rows[i].Cells.Count; j++)
+                {
+                    if (dgv.Rows[i].Cells[j].Value != null && dgv.Rows[i].Cells[j].Value!="")
+                    {
+                        if (dgv.Rows[i].Cells[j].Value.ToString() == key)
+                        {
+                            dgv.Rows[i].Selected = true;
+                            dgvData.FirstDisplayedScrollingRowIndex = 9;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
         
     }
 }

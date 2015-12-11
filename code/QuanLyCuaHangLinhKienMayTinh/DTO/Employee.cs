@@ -9,6 +9,8 @@ namespace DTO
 {
     public class Employee
     {
+
+        
         public string EmployeeID { get; set; }
         public string EmployeeName { get; set; }
         public string Sex { get; set; }
@@ -22,7 +24,6 @@ namespace DTO
         public string PositionName { get; set; }
         public string Salary { get; set; }
         public string DayWorking { get; set; }
-
         public string PassWord { get; set; }
         public string StatusName { get; set; }
         public string ControlID { get; set; }

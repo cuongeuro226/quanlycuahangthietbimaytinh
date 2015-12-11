@@ -9,7 +9,7 @@ using System.Data;
 
 namespace BLL
 {
-    class PositionBLL
+     public class PositionBLL
     {
         PositionDAL positionDAL = new PositionDAL();
         public string CreatPositionID()
@@ -19,6 +19,8 @@ namespace BLL
                 string PositionID;
                 DataTable d = positionDAL.GetPositionCount();
                 PositionID = d.Rows[0][0].ToString();
+                int t = int.Parse(PositionID) + 1;
+                PositionID = t.ToString();
                 while (PositionID.Length < 3)
                 {
                     PositionID = "0" + PositionID;
@@ -61,6 +63,44 @@ namespace BLL
             try
             {
                 return positionDAL.GetFuntion(PositionID);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+        }
+        public void Save(string PositionID, string PositionName, string Salary, string ControlID)
+        {
+            try
+            {
+                positionDAL.SavePosition(PositionID,PositionName,Salary,ControlID);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public void Update(string PositionID, string PositionName, string Salary, string ControlID)
+        {
+            try
+            {
+                positionDAL.UpdatePosition(PositionID,PositionName,Salary,ControlID,"0");
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+        }
+        public void Delete(string PositionID, string PositionName, string Salary, string ControlID)
+        {
+            try
+            {
+                positionDAL.UpdatePosition(PositionID, PositionName, Salary, ControlID, "1");
+
             }
             catch (Exception e)
             {

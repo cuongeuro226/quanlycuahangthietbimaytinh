@@ -132,7 +132,7 @@ namespace BLL
                     c.StatusName = r.ItemArray[13].ToString();
                     //c.ImageLink =new MemoryStream(Encoding.UTF8.GetBytes( r.ItemArray[12].ToString()));
                     c.PassWord = r.ItemArray[14].ToString();
-                    c.ControlID = r.ItemArray[16].ToString();
+                    c.ControlID = r.ItemArray[15].ToString();
                     cv.Add(c);
                 }
             }
