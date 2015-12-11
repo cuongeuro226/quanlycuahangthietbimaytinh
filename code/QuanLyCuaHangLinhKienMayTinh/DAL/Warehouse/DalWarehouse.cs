@@ -16,7 +16,9 @@ namespace DAL.Warehouse
         public DataTable GetListWarehouse()
         {
             return
-                SqlHelper.ExecuteDataset(Constants.ConnectionStrnig, CommandType.StoredProcedure, "GetListWarehouses")
+                SqlHelper.ExecuteDataset(Constants.ConnectionString, 
+                CommandType.StoredProcedure, 
+                "GetListWarehouses")
                     .Tables[0];
         }
 
@@ -32,7 +34,9 @@ namespace DAL.Warehouse
                     new SqlParameter("@NgayTao", data.NgayTao),
                     new SqlParameter("@Ghichu", data.GhiChu),
                 };
-                return SqlHelper.ExecuteNonQuery(Constants.ConnectionStrnig, CommandType.StoredProcedure, "AddWarehouse");
+                return SqlHelper.ExecuteNonQuery(Constants.ConnectionString, 
+                    CommandType.StoredProcedure, 
+                    "AddWarehouse", para);
 
             }
             catch (SqlException)
@@ -42,6 +46,46 @@ namespace DAL.Warehouse
             catch (Exception)
             {
                 throw new  AggregateException(Constants.MsgExceptionError);
+            }
+        }
+
+        public DataTable SearchWarehouse(string q)
+        {
+            SqlParameter[] para =
+            {
+                new SqlParameter("@Query", q)
+            };
+            return SqlHelper.ExecuteDataset(Constants.ConnectionString, 
+                CommandType.StoredProcedure,
+                "SearchWarehouse",
+                para).
+                Tables[0];
+        }
+
+        public int EditWarehouse(DtoWarehouse data) 
+        {
+            try
+            {
+                SqlParameter[] para =
+                {
+                    new SqlParameter("@MaKho", data.MaKho),
+                    new SqlParameter("@TenKho", data.TenKho),
+                    new SqlParameter("@TrangThai", data.TrangThai == true ? 1 : 0),
+                    new SqlParameter("@NgayTao", data.NgayTao),
+                    new SqlParameter("@Ghichu", data.GhiChu),
+                };
+                return SqlHelper.ExecuteNonQuery(Constants.ConnectionString,
+                    CommandType.StoredProcedure,
+                    "EditWarehouse", para);
+
+            }
+            catch (SqlException)
+            {
+                throw new ArgumentException(Constants.MsgExceptionSql);
+            }
+            catch (Exception)
+            {
+                throw new AggregateException(Constants.MsgExceptionError);
             }
         }
     }
