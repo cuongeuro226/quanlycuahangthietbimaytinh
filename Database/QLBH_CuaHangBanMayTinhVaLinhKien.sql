@@ -111,6 +111,7 @@ CREATE TABLE KHO
 	TenKho nvarchar(50) not null,
 	TrangThai int not null, 
 	GhiChu nvarchar(100), 
+	NgayTao smalldatetime not null,
 	primary key(MaKho),
 	check(TrangThai >= 0 and TrangThai <= 1)
 )
@@ -127,6 +128,7 @@ CREATE TABLE SANPHAM
 	NgayHetHan smalldatetime, 
 	DonGiaNhap money not null, 
 	DonGiaBan money not null, 
+	SoLuong int not null,
 	DonViTinh nvarchar(10) not null, 
 	TinhTrang nvarchar(10) not null, 
 	Kho nvarchar(10) not null, 
