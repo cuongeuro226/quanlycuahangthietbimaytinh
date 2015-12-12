@@ -15,7 +15,7 @@ namespace QuanLyCuaHangLinhKienMayTinh
     public partial class frmLogin : Form
     {
         public int _exit = 0;
-        DangNhapBLL d = new DangNhapBLL();
+        LoginBLL d = new LoginBLL();
         public frmLogin()
         {
             InitializeComponent();

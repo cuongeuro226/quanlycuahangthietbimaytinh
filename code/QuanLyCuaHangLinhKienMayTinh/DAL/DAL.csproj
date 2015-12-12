@@ -43,8 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DangNhapDAL.cs" />
-    <Compile Include="DataConnection.cs" />
+    <Compile Include="LoginDAL.cs" />
     <Compile Include="InfoEmployeeDAL.cs" />
     <Compile Include="EmployeeDAL.cs" />
     <Compile Include="PositionDAL.cs" />

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
+
     public class rule
     {
         /// <summary>

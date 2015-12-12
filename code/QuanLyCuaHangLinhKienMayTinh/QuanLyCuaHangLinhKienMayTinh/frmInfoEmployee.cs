@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using System.IO;
+using System.Drawing.Imaging;
 
 namespace QuanLyCuaHangLinhKienMayTinh
 {
@@ -41,13 +43,21 @@ namespace QuanLyCuaHangLinhKienMayTinh
                 //get position number
                 DTO.position c = (DTO.position)cboPosition.SelectedItem;
                 string macv = c.PositionNumber.ToString();
-
+                MemoryStream mem = new MemoryStream();
                 try
                 {
+                   
+                    Image ima = picImage.BackgroundImage;
+                    ima.Save(mem, ImageFormat.Jpeg);
+                }
+                catch { };
+                try
+                {
+                    
                     infoEmployeeBLL.UpdateEmployee(txtEmployeeID.Text, txtEmployeeName.Text, cboSex.Text, txtNumberID.Text, txtPhone.Text, dtmBirthDay.Value.ToString(), txtAddress.Text,
-                                txtPlaceBrith.Text, txtAge.Text, macv, txtSalary.Text, dtmDayWorking.Value.ToString(), txtPassword.Text, cboStatus.Text);
+                                txtPlaceBrith.Text, txtAge.Text, macv, txtSalary.Text, dtmDayWorking.Value.ToString(), txtPassword.Text, cboStatus.Text, mem);
                     DisplayNotify("Cập nhật thành công", 1);
-                     
+
 
                 }
                 catch

@@ -5,34 +5,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using Microsoft.ApplicationBlocks.Data;
+using CommonLayer;
+using System.Data.SqlClient;
 
 namespace DAL
 {
 
    public class EmployeeDAL
     {
-        DataConnection _connect = DataConnection.getInstance();
-        public EmployeeDAL()
-        {
-            DAL.DataConnection.getInstance().SetupConnection("LTN", "QLBH_CuaHangBanMayTinh-LinhKien");
-        }
-        ///
+         
         public DataTable GetEmployeeCount()
         {
-            DataTable data = new DataTable();
             try
             {
-                string sql = @"Select count(*)
-                                    from NHANVIEN ";
+                return SqlHelper.ExecuteDataset(Constants.ConnectionString,
+                    CommandType.StoredProcedure,
+                    "GeCountEmployee").Tables[0];
 
-                data= _connect.Read(sql);
-                return data;
             }
             catch (Exception e)
             {
                 throw e;
             }
- 
+
         }
 
 
@@ -40,18 +36,51 @@ namespace DAL
                          string ngaysinh, string diachi, string noisinh, string tuoi, string chucvu,
                          string luong, string ngayVaoLam, MemoryStream anhThe,string pass, string trangthai)
         {
+           
             try
             {
-                string sql = "insert into NHANVIEN values(N'{0}',N'{1}',N'{2}',N'{3}',N'{4}',N'{5}',N'{6}',N'{7}',N'{8}',N'{9}',N'{10}',N'{11}',@Img,N'{12}',N'{13}',N'{14}')";
+                SqlConnection con = new SqlConnection(Constants.ConnectionString);
+                con.Open();
+                SqlTransaction tran = con.BeginTransaction();
+                SqlParameter[] para1 =
+                {
+                    new SqlParameter("@MaNV", manv),
+                    new SqlParameter("@Ten", ten),
+                    new SqlParameter("@GioiTinh", gioitinh),
+                    new SqlParameter("@CMND", cmnd),
+                    new SqlParameter("@SDT", sdt),
+                    new SqlParameter("@NgaySinh", ngaysinh),
+                    new SqlParameter("@DiaChi", diachi),
+                    new SqlParameter("@NoiSinh", noisinh),
+                    new SqlParameter("@Tuoi", tuoi),
+                    new SqlParameter("@ChucVu", chucvu),
+                    new SqlParameter("@Luong", luong),
+                    new SqlParameter("@NgayVaoLam", ngayVaoLam),
+                    new SqlParameter("@AnhThe", anhThe.ToArray()),
+                    new SqlParameter("@TrangThai", trangthai),
+                    new SqlParameter("@Password", pass),
+                    new SqlParameter("@MaCN",manv)
+                };
+                SqlParameter[] para2 =
+                {
+                    new SqlParameter ("@MaChucNang",manv),
+                };
 
-                Console.WriteLine(string.Format(sql, manv, ten, gioitinh, cmnd, sdt, ngaysinh, diachi, noisinh, tuoi, chucvu, luong, ngayVaoLam, anhThe.ToArray(), trangthai,pass,manv));
 
-                DataConnection.getInstance().WriteImage(string.Format(sql, manv, ten, gioitinh, cmnd, sdt, ngaysinh, diachi, noisinh, tuoi, chucvu, luong, ngayVaoLam, trangthai,pass,manv),anhThe);
+                SqlHelper.ExecuteNonQuery(tran,
+                   CommandType.StoredProcedure,
+                   "CreateFuntion", para2);
+                SqlHelper.ExecuteNonQuery(tran,
+                    CommandType.StoredProcedure,
+                    "InsertEmployee", para1);
+                tran.Commit();
+                con.Close();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 throw e;
             }
+
         }
         public void UpdateEmployee(string manv, string ten, string gioitinh, string cmnd, string sdt,
                          string ngaysinh, string diachi, string noisinh, string tuoi, string chucvu,
@@ -59,71 +88,116 @@ namespace DAL
         {
             try
             {
-                string sql = @"update NHANVIEN SET Ten=N'{0}',GioiTinh=N'{1}',CMND=N'{2}',SDT=N'{3}',
-                                NgaySinh=N'{4}',DiaChi=N'{5}',NoiSinh=N'{6}',Tuoi=N'{7}',ChucVu=N'{8}',
-                                Luong=N'{9}',NgayVaoLam=N'{10}',AnhThe=@Img,TrangThai=N'{12}',PassWord=N'{13}' 
-                               where MaNV=N'{15}'";
-                Console.WriteLine(string.Format(sql, ten, gioitinh, cmnd, sdt, ngaysinh, diachi, noisinh, tuoi, chucvu, luong, ngayVaoLam, anhThe, trangthai, pass, manv));
+                SqlConnection con = new SqlConnection(Constants.ConnectionString);
+                con.Open();
+                SqlTransaction tran = con.BeginTransaction();
 
-                DataConnection.getInstance().WriteImage(string.Format(sql, ten, gioitinh, cmnd, sdt, ngaysinh, diachi, noisinh, tuoi, chucvu, luong, ngayVaoLam, anhThe.ToArray(), trangthai, pass, manv),anhThe);
+                SqlParameter[] para1 =
+                {
+
+                    new SqlParameter("@MaNV", manv),
+                    new SqlParameter("@Ten", ten),
+                    new SqlParameter("@GioiTinh", gioitinh),
+                    new SqlParameter("@CMND", cmnd),
+                    new SqlParameter("@SDT", sdt),
+                    new SqlParameter("@NgaySinh", ngaysinh),
+                    new SqlParameter("@DiaChi", diachi),
+                    new SqlParameter("@NoiSinh", noisinh),
+                    new SqlParameter("@Tuoi", tuoi),
+                    new SqlParameter("@ChucVu", chucvu),
+                    new SqlParameter("@Luong", luong),
+                    new SqlParameter("@NgayVaoLam", ngayVaoLam),
+                    new SqlParameter("@AnhThe", anhThe.ToArray()),
+                    new SqlParameter("@TrangThai", trangthai),
+                    new SqlParameter("@Password", pass),
+                    new SqlParameter("@MaCN",manv)
+                };
+                SqlParameter[] para2 =
+               {
+                    new SqlParameter ("@MaChucNang",manv),
+                };
+
+
+                SqlHelper.ExecuteNonQuery(tran,
+                   CommandType.StoredProcedure,
+                   "UpdateFuntion", para2);
+                SqlHelper.ExecuteNonQuery(tran,
+                   CommandType.StoredProcedure,
+                   "UpdateEmployee", para1);
+                tran.Commit();
+                con.Close();
             }
             catch (Exception e)
             {
                 throw e;
             }
         }
-
-        public DataTable GetListPosition()
+        public void DeleteEmployee(string manv,string trangthai)
         {
-
-            DataTable data = new DataTable();
             try
             {
-                string sql = @"Select *
-                                    from CHUCVU 
-                                            where DaXoa='0'";
+                SqlParameter[] para =
+                {
+                    new SqlParameter("@MaNV", manv),
+                    new SqlParameter("@TrangThai", trangthai),
+                };
+                SqlHelper.ExecuteNonQuery(Constants.ConnectionString,
+                   CommandType.StoredProcedure,
+                   "DeleteEmployee", para);
 
-                data = _connect.Read(sql);
-                return data;
             }
             catch (Exception e)
             {
                 throw e;
             }
- 
+        }
+        public DataTable GetListPosition()
+        {
+            try
+            {
+                return SqlHelper.ExecuteDataset(Constants.ConnectionString,
+                    CommandType.StoredProcedure,
+                    "GetAllPosition").Tables[0];
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
 
         }
        
 
         public DataTable GetAllEmployee()
         {
-            DataTable data = new DataTable();
             try
             {
-                string sql = @"Select * 
-                                    from NHANVIEN ";
+                return SqlHelper.ExecuteDataset(Constants.ConnectionString,
+                    CommandType.StoredProcedure,
+                    "GetAllEmployee").Tables[0];
 
-                data = _connect.Read(sql);
-                return data;
             }
             catch (Exception e)
             {
                 throw e;
             }
-  
+
         }
 
         public DataTable GetImage(string EmployeeID)
         {
-            DataTable data = new DataTable();
             try
             {
-                string sql = @"Select AnhThe
-                                    from NHANVIEN 
-                                    where MaNV =N'"+EmployeeID+"'";
+                SqlParameter[] para =
+                {
+                    new SqlParameter ("@MaNV",EmployeeID),
+                };
+                    
 
-                data = _connect.Read(sql);
-                return data;
+                return SqlHelper.ExecuteDataset(Constants.ConnectionString,
+                    CommandType.StoredProcedure,
+                    "GetImage",para).Tables[0];
+
             }
             catch (Exception e)
             {
@@ -133,15 +207,18 @@ namespace DAL
 
         public DataTable GetPositionName(string positionID)
         {
-            DataTable data = new DataTable();
             try
             {
-                string sql = @"Select TenChucVu
-                                    from CHUCVU
-                                    where MaChucVu =N'"+positionID+"'and DaXoa='0'";
+                SqlParameter[] para =
+                {
+                    new SqlParameter ("@MaChucVu",positionID),
+                };
 
-                data = _connect.Read(sql);
-                return data;
+
+                return SqlHelper.ExecuteDataset(Constants.ConnectionString,
+                    CommandType.StoredProcedure,
+                    "GetPositionName",para).Tables[0];
+
             }
             catch (Exception e)
             {
@@ -151,22 +228,48 @@ namespace DAL
          
         public DataTable GetPosition(string positionID)
         {
-            DataTable data = new DataTable();
             try
             {
-                string sql = @"Select *
-                                    from CHUCVU
-                                    where MaChucVu =N'" + positionID + @"' 
-                                            and DaXoa='0'";
+                SqlParameter[] para =
+                {
+                    new SqlParameter ("@MaChucVu",positionID),
+                };
 
-                data = _connect.Read(sql);
-                return data;
+
+                return SqlHelper.ExecuteDataset(Constants.ConnectionString,
+                    CommandType.StoredProcedure,
+                    "GetPosition",para).Tables[0];
+
             }
             catch (Exception e)
             {
                 throw e;
             }
         }
+
+        public DataTable GetFuntion(string ControlID)
+        {
+            try
+            {
+                SqlParameter[] para =
+                {
+                    new SqlParameter ("@MaCN",ControlID),
+                };
+
+
+                return SqlHelper.ExecuteDataset(Constants.ConnectionString,
+                    CommandType.StoredProcedure,
+                    "GetFuntion", para).Tables[0];
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+
+       
 
 
     }

@@ -86,6 +86,7 @@ namespace BLL
         {
             try
             {
+                
                 positionDAL.UpdatePosition(PositionID,PositionName,Salary,ControlID,"0");
 
             }
@@ -95,12 +96,15 @@ namespace BLL
             }
 
         }
-        public void Delete(string PositionID, string PositionName, string Salary, string ControlID)
+        public void Delete(string PositionID, out String Error)
         {
+            Error = "0";
             try
             {
-                positionDAL.UpdatePosition(PositionID, PositionName, Salary, ControlID, "1");
-
+                if (int.Parse(positionDAL.GetCountEmployeeUsePosition(PositionID).Rows[0].ItemArray[0].ToString()) == 0)
+                    positionDAL.DeletePosition(PositionID);
+                else
+                    Error = "Tồn tại nhân viên sử dụng chức vụ này nên không thể xóa";
             }
             catch (Exception e)
             {

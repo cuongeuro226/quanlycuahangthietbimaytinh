@@ -43,7 +43,7 @@ namespace BLL
                     c.StatusName = r.ItemArray[13].ToString();
                     //c.ImageLink = new MemoryStream(Encoding.UTF8.GetBytes(r.ItemArray[12].ToString()));
                     c.PassWord = r.ItemArray[14].ToString();
-                    c.ControlID = r.ItemArray[16].ToString();
+                    c.ControlID = r.ItemArray[15].ToString();
                     return c;
                 }
                 else
@@ -101,11 +101,11 @@ namespace BLL
 
         public void UpdateEmployee(string manv, string ten, string gioitinh, string cmnd, string sdt,
                       string ngaysinh, string diachi, string noisinh, string tuoi, string chucvu,
-                      string luong, string ngayVaoLam, string pass, string trangthai)
+                      string luong, string ngayVaoLam, string pass, string trangthai, MemoryStream anhthe)
         {
             try
             {
-                infoEmployeDAL.UpdateEmployee(manv, ten, gioitinh, cmnd, sdt, ngaysinh, diachi, noisinh, tuoi, chucvu, luong, ngayVaoLam, pass, trangthai);
+                infoEmployeDAL.UpdateEmployee(manv, ten, gioitinh, cmnd, sdt, ngaysinh, diachi, noisinh, tuoi, chucvu, luong, ngayVaoLam, pass, trangthai,anhthe);
                 //update control
             }
             catch (Exception e)

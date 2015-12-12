@@ -162,6 +162,8 @@ namespace QuanLyCuaHangLinhKienMayTinh
                     positionBLL.Save(txtPositionID.Text, txtPositionName.Text, txtSalary.Text, txtPositionID.Text);
                     //update control 
 
+                    //
+                    btnSave.Enabled = false;
                     DisplayNotify("Lưu dữ liệu thành công", 1);
                 }
                 catch (Exception ex)
@@ -172,6 +174,32 @@ namespace QuanLyCuaHangLinhKienMayTinh
             }
             else
                 DisplayNotify("Lỗi nhập sai các ô nhập liệu hoặc nhập thiếu", -1);
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                String error = "0";
+                positionBLL.Delete(txtPositionID.Text, out error);
+
+                if (error == "0")
+                {// update control
+                    DisplayNotify("Xóa dữ liệu thành công", 1);
+                    dgvData.DataSource = positionBLL.GetAllPosition();
+                }
+                else
+                {
+                    DisplayNotify(error, -1);
+                }
+            }
+            catch (Exception ex)
+            {
+                DisplayNotify("Lỗi Xóa dữ liệu không thành công", -1);
+            }
+
+            
         }
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.txtPositionID = new System.Windows.Forms.TextBox();
             this.txtPositionName = new System.Windows.Forms.TextBox();
@@ -37,6 +37,10 @@
             this.txtSalary = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvData = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.ColumnPositionNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnControlID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPositionName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnSalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAdd = new DevComponents.DotNetBar.ButtonX();
             this.btnEdit = new DevComponents.DotNetBar.ButtonX();
             this.btnSearch = new DevComponents.DotNetBar.ButtonX();
@@ -67,14 +71,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lblNotify = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnSave = new DevComponents.DotNetBar.ButtonX();
-            this.ColumnPositionNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnControlID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnPositionName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnSalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblNotify = new System.Windows.Forms.Label();
             this.timerNotify = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.grpControl.SuspendLayout();
@@ -153,14 +153,14 @@
             this.ColumnControlID,
             this.ColumnPositionName,
             this.ColumnSalary});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvData.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvData.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvData.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgvData.Location = new System.Drawing.Point(12, 35);
             this.dgvData.Name = "dgvData";
@@ -169,6 +169,35 @@
             this.dgvData.Size = new System.Drawing.Size(619, 161);
             this.dgvData.TabIndex = 8;
             this.dgvData.SelectionChanged += new System.EventHandler(this.dgvData_SelectionChanged);
+            // 
+            // ColumnPositionNumber
+            // 
+            this.ColumnPositionNumber.DataPropertyName = "PositionNumber";
+            this.ColumnPositionNumber.HeaderText = "Mã Chức vụ";
+            this.ColumnPositionNumber.Name = "ColumnPositionNumber";
+            this.ColumnPositionNumber.ReadOnly = true;
+            // 
+            // ColumnControlID
+            // 
+            this.ColumnControlID.DataPropertyName = "ControlID";
+            this.ColumnControlID.HeaderText = "ControlID";
+            this.ColumnControlID.Name = "ColumnControlID";
+            this.ColumnControlID.ReadOnly = true;
+            this.ColumnControlID.Visible = false;
+            // 
+            // ColumnPositionName
+            // 
+            this.ColumnPositionName.DataPropertyName = "PositionName";
+            this.ColumnPositionName.HeaderText = "Tên Chức vụ";
+            this.ColumnPositionName.Name = "ColumnPositionName";
+            this.ColumnPositionName.ReadOnly = true;
+            // 
+            // ColumnSalary
+            // 
+            this.ColumnSalary.DataPropertyName = "Salary";
+            this.ColumnSalary.HeaderText = "Lương";
+            this.ColumnSalary.Name = "ColumnSalary";
+            this.ColumnSalary.ReadOnly = true;
             // 
             // btnAdd
             // 
@@ -219,6 +248,7 @@
             this.btnDelete.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnDelete.TabIndex = 9;
             this.btnDelete.Text = "Xóa";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnExit
             // 
@@ -529,6 +559,18 @@
             this.panel4.Size = new System.Drawing.Size(729, 25);
             this.panel4.TabIndex = 12;
             // 
+            // lblNotify
+            // 
+            this.lblNotify.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblNotify.AutoSize = true;
+            this.lblNotify.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(175)))), ((int)(((byte)(45)))));
+            this.lblNotify.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNotify.ForeColor = System.Drawing.Color.Black;
+            this.lblNotify.Location = new System.Drawing.Point(364, 4);
+            this.lblNotify.Name = "lblNotify";
+            this.lblNotify.Size = new System.Drawing.Size(0, 16);
+            this.lblNotify.TabIndex = 4;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.panel5);
@@ -566,47 +608,6 @@
             this.btnSave.TabIndex = 9;
             this.btnSave.Text = "Lưu";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // ColumnPositionNumber
-            // 
-            this.ColumnPositionNumber.DataPropertyName = "PositionNumber";
-            this.ColumnPositionNumber.HeaderText = "Mã Chức vụ";
-            this.ColumnPositionNumber.Name = "ColumnPositionNumber";
-            this.ColumnPositionNumber.ReadOnly = true;
-            // 
-            // ColumnControlID
-            // 
-            this.ColumnControlID.DataPropertyName = "ControlID";
-            this.ColumnControlID.HeaderText = "ControlID";
-            this.ColumnControlID.Name = "ColumnControlID";
-            this.ColumnControlID.ReadOnly = true;
-            this.ColumnControlID.Visible = false;
-            // 
-            // ColumnPositionName
-            // 
-            this.ColumnPositionName.DataPropertyName = "PositionName";
-            this.ColumnPositionName.HeaderText = "Tên Chức vụ";
-            this.ColumnPositionName.Name = "ColumnPositionName";
-            this.ColumnPositionName.ReadOnly = true;
-            // 
-            // ColumnSalary
-            // 
-            this.ColumnSalary.DataPropertyName = "Salary";
-            this.ColumnSalary.HeaderText = "Lương";
-            this.ColumnSalary.Name = "ColumnSalary";
-            this.ColumnSalary.ReadOnly = true;
-            // 
-            // lblNotify
-            // 
-            this.lblNotify.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblNotify.AutoSize = true;
-            this.lblNotify.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(175)))), ((int)(((byte)(45)))));
-            this.lblNotify.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNotify.ForeColor = System.Drawing.Color.Black;
-            this.lblNotify.Location = new System.Drawing.Point(364, 4);
-            this.lblNotify.Name = "lblNotify";
-            this.lblNotify.Size = new System.Drawing.Size(0, 16);
-            this.lblNotify.TabIndex = 4;
             // 
             // timerNotify
             // 

@@ -39,7 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DangNhapBLL.cs" />
+    <Compile Include="LoginBLL.cs" />
     <Compile Include="InfoEmployeeBLL.cs" />
     <Compile Include="EmployeeBLL.cs" />
     <Compile Include="PositionBLL.cs" />

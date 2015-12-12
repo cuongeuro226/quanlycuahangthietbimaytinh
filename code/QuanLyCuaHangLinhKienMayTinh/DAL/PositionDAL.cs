@@ -1,6 +1,9 @@
-﻿using System;
+﻿using CommonLayer;
+using Microsoft.ApplicationBlocks.Data;
+using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,22 +12,23 @@ namespace DAL
 {
     public class PositionDAL
     {
-        DataConnection _connect = DataConnection.getInstance();
-        public PositionDAL()
-        {
-            DAL.DataConnection.getInstance().SetupConnection("LTN", "QLBH_CuaHangBanMayTinh-LinhKien");
-        }
+        
         ///
         public DataTable GetPositionCount()
         {
-            DataTable data = new DataTable();
+
             try
             {
-                string sql = @"Select count(*)
-                                    from CHUCVU ";
+                //SqlParameter[] para =
+                //{
+                //    new SqlParameter ("@MaChucVu",positionID),
+                //};
 
-                data = _connect.Read(sql);
-                return data;
+
+                return SqlHelper.ExecuteDataset(Constants.ConnectionString,
+                    CommandType.StoredProcedure,
+                    "GetPositionCount").Tables[0];
+
             }
             catch (Exception e)
             {
@@ -34,47 +38,56 @@ namespace DAL
         }
         public DataTable GetAllPosition()
         {
-            DataTable data = new DataTable();
             try
             {
-                string sql = @"Select *
-                                    from CHUCVU ";
+                //SqlParameter[] para =
+                //{
+                //    new SqlParameter ("@MaChucVu",positionID),
+                //};
 
-                data = _connect.Read(sql);
-                return data;
+
+                return SqlHelper.ExecuteDataset(Constants.ConnectionString,
+                    CommandType.StoredProcedure,
+                    "GetAllPosition").Tables[0];
+
             }
             catch (Exception e)
             {
                 throw e;
             }
-
         }
-        public DataTable GetFuntion(string ControlID)
-        {
-            DataTable data = new DataTable();
-            try
-            {
-                string sql = @"Select *
-                                    from CHUCNANG
-                                               where MaCN=N'" + ControlID + "'";
-
-                data = _connect.Read(sql);
-                return data;
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-
-        }
+        
 
         public void SavePosition(string PositionID, string PositionName, string Salary, string ControlID)
         {
             try
             {
-                string sql = "insert into CHUCVU values(N'{0}',N'{1}',N'{2}',N'{3}','0')";
+                SqlConnection con = new SqlConnection(Constants.ConnectionString);
+                con.Open();
+                SqlTransaction tran = con.BeginTransaction();
+                SqlParameter[] para1 =
+                {
+                    new SqlParameter ("@MaChucNang",ControlID),
+                };
+                
+                SqlParameter[] para2 =
+                {
+                    new SqlParameter ("@MaChucVu",PositionID),
+                    new SqlParameter ("@TenChucVu",PositionName),
+                    new SqlParameter ("@Luong",Salary),
+                    new SqlParameter ("@MaCN",ControlID),
+                };
 
-                DataConnection.getInstance().Write(string.Format(sql, PositionID, PositionName, Salary, ControlID));
+
+
+                SqlHelper.ExecuteNonQuery(tran,
+                   CommandType.StoredProcedure,
+                   "CreateFuntion", para1);
+                SqlHelper.ExecuteNonQuery(tran,
+                   CommandType.StoredProcedure,
+                   "SavePosition",para2);
+                tran.Commit();
+                con.Close();
             }
             catch (Exception e)
             {
@@ -86,53 +99,100 @@ namespace DAL
         {
             try
             {
-                string sql = @"update CHUCVU SET  TenChucVu=N'{0}',Luong=N'{1}',MaCN=N'{2}',
-                                DaXoa=N'{3}'
-                               where MaChucVu=N'{4}'";
-                Console.WriteLine(string.Format(sql, PositionID, PositionName, Salary, ControlID, IsDelete));
+                SqlConnection con = new SqlConnection(Constants.ConnectionString);
+                con.Open();
+                SqlTransaction tran = con.BeginTransaction();
+                SqlParameter[] para1 =
+                {
+                    new SqlParameter ("@MaChucVu",PositionID),
+                    new SqlParameter ("@TenChucVu",PositionName),
+                    new SqlParameter ("@Luong",Salary),
+                    new SqlParameter ("@MaCN",ControlID),
+                    new SqlParameter("@DaXoa",IsDelete),
+                };
+                SqlParameter[] para2 =
+                {
+                    new SqlParameter ("@MaChucNang",ControlID),
+                };
 
-                DataConnection.getInstance().Write(string.Format(sql, PositionID, PositionName, Salary, ControlID, IsDelete));
+
+                SqlHelper.ExecuteNonQuery(tran,
+                   CommandType.StoredProcedure,
+                   "UpdateFuntion", para2);
+
+                SqlHelper.ExecuteNonQuery(tran,
+                   CommandType.StoredProcedure,
+                   "UpdatePosition",para1);
+                tran.Commit();
+                con.Close();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public void DeletePosition(string PositionID)
+        {
+            try
+            {
+                SqlParameter[] para =
+                {
+                    new SqlParameter ("@MaChucVu",PositionID)
+                };
+
+
+                SqlHelper.ExecuteNonQuery(Constants.ConnectionString,
+                   CommandType.StoredProcedure,
+                   "DeletePosition", para);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public DataTable GetFuntion(string ControlID)
+        {
+            try
+            {
+                SqlParameter[] para =
+                {
+                    new SqlParameter ("@MaCN",ControlID),
+                };
+
+
+                return SqlHelper.ExecuteDataset(Constants.ConnectionString,
+                    CommandType.StoredProcedure,
+                    "GetFuntion", para).Tables[0];
 
             }
             catch (Exception e)
             {
                 throw e;
             }
-
         }
+        
+        public DataTable GetCountEmployeeUsePosition(string PositionID)
+        {
+            try
+            {
+                SqlParameter[] para =
+                {
+                    new SqlParameter ("@MaChucVu",PositionID),
+                };
 
-        //public void SaveFuntion(string PositionID, string PositionName, string Salary, string ControlID)
-        //{
-        //    try
-        //    {
-        //        string sql = "insert into CHUCNANG values(N'{0}',N'{1}',N'{2}',N'{3}','0')";
 
-        //        DataConnection.getInstance().Write(string.Format(sql, PositionID, PositionName, Salary, ControlID));
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        throw e;
-        //    }
-        //}
+                return SqlHelper.ExecuteDataset(Constants.ConnectionString,
+                    CommandType.StoredProcedure,
+                    "GetCountEmployeeUsePosition", para).Tables[0];
 
-        //public void UpdateFuntion(string PositionID, string PositionName, string Salary, string ControlID, string IsDelete)
-        //{
-        //    try
-        //    {
-        //        string sql = @"update CHUCVU SET  TenChucVu=N'{0}',Luong=N'{1}',MaCN=N'{2}',
-        //                        DaXoa=N'{3}'
-        //                       where MaChucVu=N'{4}'";
-        //        Console.WriteLine(string.Format(sql, PositionID, PositionName, Salary, ControlID, IsDelete));
-
-        //        DataConnection.getInstance().Write(string.Format(sql, PositionID, PositionName, Salary, ControlID, IsDelete));
-
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        throw e;
-        //    }
-
-        //}
-        //}
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+        
     }
 }

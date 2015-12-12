@@ -75,7 +75,7 @@ namespace BLL
         {
             try
             {
-                EmployeeDAL.UpdateEmployee(manv, ten, gioitinh, cmnd, sdt, ngaysinh, diachi, noisinh, tuoi, chucvu, luong, ngayVaoLam, anhThe, pass, "Đã nghĩ làm");
+                EmployeeDAL.DeleteEmployee(manv, "Đã nghĩ làm");
             }
             catch (Exception e)
             {

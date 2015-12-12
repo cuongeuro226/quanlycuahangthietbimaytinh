@@ -92,22 +92,28 @@ namespace QuanLyCuaHangLinhKienMayTinh
             string macv = c.PositionNumber.ToString();
             //image
             MemoryStream mem = new MemoryStream();
-            if (txtImagelink.Text.Length == 0)
-            {
-                Image ima = picImage.BackgroundImage;
-                ima.Save(mem, ImageFormat.Jpeg);
-            }
-            else
-            {
-                Image ima = Image.FromFile(txtImagelink.Text);
-                ima.Save(mem, ImageFormat.Jpeg);
-            }
             try
             {
+                if (txtImagelink.Text.Length == 0)
+                {
+                    Image ima = picImage.BackgroundImage;
+                    ima.Save(mem, ImageFormat.Jpeg);
+                }
+                else
+                {
+                    Image ima = Image.FromFile(txtImagelink.Text);
+                    ima.Save(mem, ImageFormat.Jpeg);
+                }
+            }
+            catch { };
+            try
+            {
+                string KeyToSelect = txtEmployeeID.Text;
                 employeeBLL.DeleteEmployee(txtEmployeeID.Text, txtEmployeeName.Text, cboSex.Text, txtNumberID.Text, txtPhone.Text, dtmBirthDay.Value.ToString(), txtAddress.Text,
                             txtPlaceBrith.Text, txtAge.Text, macv, txtSalary.Text, dtmDayWorking.Value.ToString(), mem, txtPassword.Text, cboStatus.Text);
                 DisplayNotify("Xoa thành công", 1);
                 dgvData.DataSource = employeeBLL.GetAllEmployee();
+                SelectRow(dgvData, KeyToSelect);
             }
             catch
             {
@@ -124,24 +130,31 @@ namespace QuanLyCuaHangLinhKienMayTinh
                 //get position number
                 DTO.position c = (DTO.position)cboPosition.SelectedItem;
                 string macv = c.PositionNumber.ToString();
-                //image
-                Image ima = Image.FromFile(openFileDialogImage.FileName);
-                MemoryStream mem = new MemoryStream();
-                ima.Save(mem, ImageFormat.Jpeg);
-                try
-                {
-                    string KeyToSelect = txtEmployeeID.Text;
-                    employeeBLL.SaveEmployee(txtEmployeeID.Text, txtEmployeeName.Text, cboSex.Text, txtNumberID.Text, txtPhone.Text, dtmBirthDay.Value.ToString(), txtAddress.Text,
-                                txtPlaceBrith.Text, txtAge.Text, macv, txtSalary.Text, dtmDayWorking.Value.ToString(), mem, txtPassword.Text, cboStatus.Text);
-                    DisplayNotify("Lưu thành công", 1);
-                    dgvData.DataSource = employeeBLL.GetAllEmployee();
-                    SelectRow(dgvData, KeyToSelect);
+                //images
+                try {
+                    Image ima = Image.FromFile(openFileDialogImage.FileName);
+                    MemoryStream mem = new MemoryStream();
+                    ima.Save(mem, ImageFormat.Jpeg);
+                    try
+                    {
+                        string KeyToSelect = txtEmployeeID.Text;
+                        employeeBLL.SaveEmployee(txtEmployeeID.Text, txtEmployeeName.Text, cboSex.Text, txtNumberID.Text, txtPhone.Text, dtmBirthDay.Value.ToString(), txtAddress.Text,
+                                    txtPlaceBrith.Text, txtAge.Text, macv, txtSalary.Text, dtmDayWorking.Value.ToString(), mem, txtPassword.Text, cboStatus.Text);
+                        DisplayNotify("Lưu thành công", 1);
+                        dgvData.DataSource = employeeBLL.GetAllEmployee();
+                        SelectRow(dgvData, KeyToSelect);
 
+                    }
+                    catch
+                    {
+                        DisplayNotify("Lỗi ghi dữ liệu xuống CSDL", -1);
+                    }
                 }
-                catch
+                catch(Exception ex)
                 {
-                    DisplayNotify("Lỗi ghi dữ liệu xuống CSDL", -1);
+                    DisplayNotify("Lỗi load ảnh", -1);
                 }
+                
             }
             else
             {
@@ -432,10 +445,15 @@ namespace QuanLyCuaHangLinhKienMayTinh
                 cboStatus.SelectedItem = EmployeeSelected.StatusName;
                 SetSelectItemComboboxPosition(EmployeeSelected.PositionID);
                 //image
-                byte[] b = employeeBLL.GetImage(EmployeeSelected.EmployeeID);
-                MemoryStream mem = new MemoryStream(b) ;
-                Image ima = Image.FromStream(mem,true);
-                picImage.BackgroundImage = ima;
+                try
+                {
+                    byte[] b = employeeBLL.GetImage(EmployeeSelected.EmployeeID);
+                    MemoryStream mem = new MemoryStream(b);
+                    Image ima = Image.FromStream(mem, true);
+                    picImage.BackgroundImage = ima;
+                }
+                catch (Exception ex) { };
+                
                 //btn
                 btnSave.Enabled = false;
                 btnEdit.Enabled = true;
@@ -537,7 +555,7 @@ namespace QuanLyCuaHangLinhKienMayTinh
                         if (dgv.Rows[i].Cells[j].Value.ToString() == key)
                         {
                             dgv.Rows[i].Selected = true;
-                            dgvData.FirstDisplayedScrollingRowIndex = 9;
+                            dgvData.FirstDisplayedScrollingRowIndex = i;
                             break;
                         }
                     }
