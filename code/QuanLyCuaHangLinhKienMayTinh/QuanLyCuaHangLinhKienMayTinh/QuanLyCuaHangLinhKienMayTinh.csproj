@@ -161,6 +161,12 @@
     <Compile Include="Warehouse\frmAddWarehouse.Designer.cs">
       <DependentUpon>frmAddWarehouse.cs</DependentUpon>
     </Compile>
+    <Compile Include="Warehouse\frmProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warehouse\frmProduct.Designer.cs">
+      <DependentUpon>frmProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Warehouse\frmWarehouse.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Warehouse\frmAddWarehouse.resx">
       <DependentUpon>frmAddWarehouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warehouse\frmProduct.resx">
+      <DependentUpon>frmProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Warehouse\frmWarehouse.resx">
       <DependentUpon>frmWarehouse.cs</DependentUpon>

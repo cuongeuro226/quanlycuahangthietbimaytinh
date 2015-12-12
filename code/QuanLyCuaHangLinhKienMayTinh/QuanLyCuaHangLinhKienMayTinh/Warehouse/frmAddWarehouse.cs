@@ -106,14 +106,7 @@ namespace QuanLyCuaHangLinhKienMayTinh.Warehouse
 
         private void txt_TextChanged(object sender, EventArgs e)
         {
-            if (isValidate())
-            {
-                btnAdd.Enabled = true;
-            }
-            else
-            {
-                btnAdd.Enabled = false;
-            }
+            btnAdd.Enabled = isValidate();
         }
 
         private bool isValidate()

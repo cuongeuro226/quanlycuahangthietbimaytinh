@@ -57,7 +57,6 @@ namespace QuanLyCuaHangLinhKienMayTinh.Warehouse
             frmAddWarehouse frm = frmAddWarehouse.GetInstance();
             frm.Closing += Frm_Closing;
             frm.ShowDialog();
-
         }
 
         private async void Frm_Closing(object sender, CancelEventArgs e)
@@ -69,14 +68,7 @@ namespace QuanLyCuaHangLinhKienMayTinh.Warehouse
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            if (txtSearch.Text.IsEmpty())
-            {
-                btnSearch.Enabled = false;
-            }
-            else
-            {
-                btnSearch.Enabled = true;
-            }
+            btnSearch.Enabled = !txtSearch.Text.IsEmpty();
         }
 
         private async void btnSearch_Click(object sender, EventArgs e)
